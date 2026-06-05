@@ -8,8 +8,8 @@ __pycache__/
 
 .env
 .env.*
+data/config/deepseek.env
 *.log
 
 data/analysis/module3_topic/llm_raw/
 data/analysis/module4_sentiment_stance/llm_raw/
-

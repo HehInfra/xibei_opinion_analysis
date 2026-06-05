@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[1]
 DB_PATH = BASE_DIR / "database" / "xibei_event.db"
 ANALYSIS_DIR = BASE_DIR / "analysis"
 MODULE_DIR = ANALYSIS_DIR / "module1_overview"
@@ -321,4 +321,3 @@ raw 文件数：{raw_file_count}
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

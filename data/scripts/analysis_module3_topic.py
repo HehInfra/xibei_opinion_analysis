@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import os
 import re
 import sqlite3
 import time
@@ -14,11 +13,13 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from deepseek_config import load_deepseek_config
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[1]
 DB_PATH = BASE_DIR / "database" / "xibei_event.db"
 MODULE_DIR = BASE_DIR / "analysis" / "module3_topic"
 LLM_RAW_DIR = MODULE_DIR / "llm_raw"
+DEFAULT_DEEPSEEK_CONFIG = BASE_DIR / "config" / "deepseek.env"
 
 
 LABELS = [
@@ -397,12 +398,16 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Module 3 topic analysis: rules + optional DeepSeek.")
     parser.add_argument("--use-llm", action="store_true", help="Call DeepSeek API to refine rule labels.")
     parser.add_argument("--reuse-llm-raw", action="store_true", help="Reuse saved llm_raw/batch_*.json without calling API.")
-    parser.add_argument("--endpoint", default=os.getenv("DEEPSEEK_ENDPOINT", "https://api.deepseek.com/chat/completions"))
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--config", default=str(DEFAULT_DEEPSEEK_CONFIG), help="DeepSeek env config file path.")
+    parser.add_argument("--endpoint", default=None, help="Override DeepSeek endpoint from config/env.")
+    parser.add_argument("--model", default=None, help="Override DeepSeek model from config/env.")
     parser.add_argument("--batch-size", type=int, default=20)
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--sleep-seconds", type=float, default=0.5)
     args = parser.parse_args()
+    deepseek_config = load_deepseek_config(args.config)
+    endpoint = args.endpoint or deepseek_config.endpoint
+    model = args.model or deepseek_config.model
 
     ensure_dirs()
     conn = sqlite3.connect(DB_PATH)
@@ -440,14 +445,16 @@ def main() -> int:
     if args.reuse_llm_raw:
         labeled_rows, llm_logs = apply_saved_llm_raw(labeled_rows)
     elif args.use_llm:
-        api_key = os.getenv("DEEPSEEK_API_KEY")
+        api_key = deepseek_config.api_key
         if not api_key:
-            raise SystemExit("Missing DEEPSEEK_API_KEY. Refusing to store API keys in code; pass it via environment variable.")
+            raise SystemExit(
+                f"Missing DEEPSEEK_API_KEY. Set it in environment or copy data/config/deepseek.example.env to {args.config}."
+            )
         labeled_rows, llm_logs = apply_llm_labels(
             labeled_rows,
             api_key=api_key,
-            endpoint=args.endpoint,
-            model=args.model,
+            endpoint=endpoint,
+            model=model,
             batch_size=args.batch_size,
             timeout=args.timeout,
             sleep_seconds=args.sleep_seconds,

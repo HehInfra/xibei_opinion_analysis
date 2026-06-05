@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[1]
 MODULE2_HOT_COMMENTS = BASE_DIR / "analysis" / "module2_heat" / "hot_comments_top100.csv"
 MODULE4_CONTENT_LABELS = BASE_DIR / "analysis" / "module4_sentiment_stance" / "content_sentiment_stance.csv"
 MODULE5_REPLY_EDGES = BASE_DIR / "analysis" / "module5_network" / "reply_edges.csv"
@@ -409,4 +409,3 @@ data/analysis/module6_cocoon/hot_comment_stance_concentration.csv
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
