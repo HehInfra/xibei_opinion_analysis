@@ -1,0 +1,83 @@
+﻿raw_record_id,platform,source_id,raw_file_path,file_name,file_size,json_path,tail_text,parse_error
+raw:c6e903afc3d7,bilibili,bilibili_video:unknown_0d56f0f9194b,/Users/heh/projects/course/content security/course_design/data/raw/9月16事态升级【罗永浩VS西贝】大卫哥双开巅峰赛！.txt,9月16事态升级【罗永浩VS西贝】大卫哥双开巅峰赛！.txt,0,,,empty_file
+raw:ed77cb98798b,bilibili,bilibili_video:115900413909566,/Users/heh/projects/course/content security/course_design/data/raw/【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！.txt,【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！.txt,460887,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115900413909566.json,"{
+    ""video_name"":""【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！""
+    ""video_time"":""2026-01-16-02-03-18""
+    ""video_user_uid"":""3546601119287659""
+}",
+raw:442289c74392,bilibili,bilibili_video:115191777923213,/Users/heh/projects/course/content security/course_design/data/raw/从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当年他怒砸西门子冰箱，为消费者维权，那场面太震撼了！.txt,从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当年他怒砸西门子冰箱，为消费者维权，那场面太震撼了！.txt,343069,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115191777923213.json,"{
+    ""video_name"":""从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当年他怒砸西门子冰箱，为消费者维权，那场面太震撼了！""
+    ""video_time"":""2025-09-12-22-33-04""
+    ""video_user_uid"":""449716778""
+}",
+raw:44c9585eaa9f,bilibili,bilibili_video:115191693968861,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩9月12日西贝门事件直播全程.txt,罗永浩9月12日西贝门事件直播全程.txt,238558,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115191693968861.json,"{
+    ""video_name"":""罗永浩9月12日西贝门事件直播全程""
+    ""video_time"":""2025-09-12-22-26-53""
+    ""video_user_uid"":""59533708""
+}",
+raw:3f255b2d7bfd,bilibili,bilibili_video:115197800941925,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩.txt,罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩.txt,293728,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115197800941925.json,"{
+    ""video_name"":""罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩""
+    ""video_time"":""2025-09-13-23-58-11""
+    ""video_user_uid"":""485307929""
+}",
+raw:61f156fa6cd0,bilibili,bilibili_video:115208706064466,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩vs西贝事件 来龙去脉 一口气看完！！！.txt,罗永浩vs西贝事件 来龙去脉 一口气看完！！！.txt,335728,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115208706064466.json,"{
+    ""video_name"":""罗永浩vs西贝事件 来龙去脉 一口气看完！！！""
+    ""video_time"":""2025-09-15-22-13-03""
+    ""video_user_uid"":""13115528""
+}",
+raw:98b79f029c2c,bilibili,bilibili_video:115206659249643,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩与西贝争论事件原委 一条视频告诉你.txt,罗永浩与西贝争论事件原委 一条视频告诉你.txt,154754,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115206659249643.json,"{
+""video_name"":""罗永浩与西贝争论事件原委 一条视频告诉你""
+""video_time"":""2025-09-15-13-35-02""
+""video_user_id"":""3494350480738883""
+}",
+raw:f5da4d79cb60,bilibili,bilibili_video:115206827021040,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩与西贝预制菜之争持续发酵，西贝自证变自爆“大翻车”，媒体评：尊重消费者知情权，自然有人为“真诚”买单.txt,罗永浩与西贝预制菜之争持续发酵，西贝自证变自爆“大翻车”，媒体评：尊重消费者知情权，自然有人为“真诚”买单.txt,249795,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115206827021040.json,"{
+""video_name"":""罗永浩与西贝预制菜之争持续发酵，西贝自证变自爆“大翻车”，媒体评：尊重消费者知情权，自然有人为“真诚”买单""
+""video_time"":""2025-09-15-14-16-52""
+""video_user_id"":""522653994""
+
+}",
+raw:9961e83b3359,bilibili,bilibili_video:115196894908031,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩也是懵了，自杀式公关还是第一次见。.txt,罗永浩也是懵了，自杀式公关还是第一次见。.txt,220692,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115196894908031.json,"{
+    ""video_name"":""罗永浩也是懵了，自杀式公关还是第一次见。""
+    ""video_time"":""2025-09-13-20-09-25""
+    ""video_user_uid"":""190342706""
+}",
+raw:e934e875d30f,bilibili,bilibili_video:115196525805764,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元.txt,罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元.txt,484134,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115196525805764.json,"{
+    ""video_name"":""罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元""
+    ""video_time"":""2025-09-13-18-35-16""
+    ""video_user_uid"":""1641520135""
+}",
+raw:6c55379fd9bb,bilibili,bilibili_video:115191660484682,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩手撕西贝直播全程【29分钟纯享版】.txt,罗永浩手撕西贝直播全程【29分钟纯享版】.txt,649404,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115191660484682.json,"{
+    ""video_name"":""罗永浩手撕西贝直播全程【29分钟纯享版】""
+    ""video_time"":""2025-09-12-22-03-59""
+    ""video_user_uid"":""37087045""
+}",
+raw:1e77ef0af9d0,bilibili,bilibili_video:115211222653264,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩是怎么把西贝搞翻车的？.txt,罗永浩是怎么把西贝搞翻车的？.txt,309379,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115211222653264.json,"{
+""video_name"":""罗永浩是怎么把西贝搞翻车的？""
+""video_time"":""2025-09-16-08-51-25""
+""video_user_id"":""3546737962649886""
+}",
+raw:711b26f93824,bilibili,bilibili_video:115192130181384,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩痛批西贝太缺德！一个馒头卖21块，比米其林餐厅还贵！#罗永浩#西贝#预制菜#太离谱.txt,罗永浩痛批西贝太缺德！一个馒头卖21块，比米其林餐厅还贵！#罗永浩#西贝#预制菜#太离谱.txt,278767,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115192130181384.json,"{
+    ""video_name"":""罗永浩痛批西贝太缺德！一个馒头卖21块，比米其林餐厅还贵！#罗永浩#西贝#预制菜#太离谱""
+    ""video_time"":""2025-09-12-23-55-19""
+    ""video_user_uid"":""407479165""
+}",
+raw:8335d3bedbbe,bilibili,bilibili_video:115212816485947,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩：我真没打，他就先捅了自己20多刀...我该怎么办？.txt,罗永浩：我真没打，他就先捅了自己20多刀...我该怎么办？.txt,212745,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115212816485947.json,"{
+    ""video_name"":""罗永浩：我真没打，他就先捅了自己20多刀...我该怎么办？""
+    ""video_time"":""2025-09-16-15-36-43""
+    ""video_user_uid"":""null""
+}",
+raw:7ed99177156c,bilibili,bilibili_video:115245498500488,/Users/heh/projects/course/content security/course_design/data/raw/罗永浩：我这辈子没打过这么离谱的仗，对方上来先捅了自己20多刀….txt,罗永浩：我这辈子没打过这么离谱的仗，对方上来先捅了自己20多刀….txt,196771,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115245498500488.json,"{
+    ""video_name"":""罗永浩：我这辈子没打过这么离谱的仗，对方上来先捅了自己20多刀…""
+    ""video_time"":""2025-09-22-10-11-48""
+    ""video_user_uid"":""null""
+}",
+raw:f5ae5eb71a0d,bilibili,bilibili_video:115195083034113,/Users/heh/projects/course/content security/course_design/data/raw/西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。.txt,西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。.txt,322787,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115195083034113.json,"{
+""video_name"":""西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。""
+""video_time"":""2025-09-13-12-25-06""
+""video_user_id"":""3494366431676903""
+}",
+raw:0e62d8c36f7c,bilibili,bilibili_video:115198320972353,/Users/heh/projects/course/content security/course_design/data/raw/西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？.txt,西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？.txt,698180,/Users/heh/projects/course/content security/course_design/data/interim/bilibili_clean_json/bilibili_video_115198320972353.json,"{
+    ""video_name"":""西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？""
+    ""video_time"":""2025-09-14-11-30-00""
+    ""video_user_uid"":""238365787""
+}",

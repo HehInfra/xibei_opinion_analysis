@@ -1,0 +1,3285 @@
+{
+  "directed": true,
+  "nodes": [
+    {
+      "id": "bilibili:37087045",
+      "name": "皇后的头风",
+      "in_degree": 2,
+      "out_degree": 13,
+      "total_degree": 15,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:4192759",
+      "name": "飘酱_",
+      "in_degree": 2,
+      "out_degree": 1,
+      "total_degree": 3,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:12332519",
+      "name": "珠希酱-一分流水",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "support_xibei",
+      "component_id": 32
+    },
+    {
+      "id": "bilibili:13247947",
+      "name": "末然ン羽",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 9
+    },
+    {
+      "id": "bilibili:13327156",
+      "name": "cvfgji",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 33
+    },
+    {
+      "id": "bilibili:14046072",
+      "name": "Mikoyan21",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 8
+    },
+    {
+      "id": "bilibili:1467643346",
+      "name": "橘柚橸",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 38
+    },
+    {
+      "id": "bilibili:149045078",
+      "name": "落车six",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 30
+    },
+    {
+      "id": "bilibili:15350722",
+      "name": "MISSC0622",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 17
+    },
+    {
+      "id": "bilibili:16569302",
+      "name": "弃庸乎",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 15
+    },
+    {
+      "id": "bilibili:166576396",
+      "name": "滑雪雪豹",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:173244991",
+      "name": "大方向是对的长长名字",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 14
+    },
+    {
+      "id": "bilibili:17545884",
+      "name": "ray21121",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 29
+    },
+    {
+      "id": "bilibili:179911944",
+      "name": "9mm空尖弹",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 24
+    },
+    {
+      "id": "bilibili:19412032",
+      "name": "鸣谦s",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 5
+    },
+    {
+      "id": "bilibili:1975211",
+      "name": "IlIlIlIIllIIlIlI",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 39
+    },
+    {
+      "id": "bilibili:209499579",
+      "name": "尾张大傻瓜织田信长",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 3
+    },
+    {
+      "id": "bilibili:21895343",
+      "name": "穿趿拉板吃涮锅子",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "positive",
+      "dominant_stance": "support_luoyonghao",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:233587785",
+      "name": "_旧青年",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 2
+    },
+    {
+      "id": "bilibili:240823190",
+      "name": "晨沁心",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 18
+    },
+    {
+      "id": "bilibili:24556340",
+      "name": "鱼刺931",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:261892524",
+      "name": "大明瓦学弟朱祁镇",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 23
+    },
+    {
+      "id": "bilibili:26391649",
+      "name": "欢喵爱吃鱼",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 26
+    },
+    {
+      "id": "bilibili:279661",
+      "name": "JIUQIANSHUODAO",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:2800590",
+      "name": "cheefay",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 12
+    },
+    {
+      "id": "bilibili:321667815",
+      "name": "代号x该隐1",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:33709459",
+      "name": "猪呆呆吃玉米",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 40
+    },
+    {
+      "id": "bilibili:346432948",
+      "name": "agere23",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "positive",
+      "dominant_stance": "unclear_meme",
+      "component_id": 28
+    },
+    {
+      "id": "bilibili:3493289095334193",
+      "name": "Sjasth",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:357773251",
+      "name": "特立独醒的猫先森",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 20
+    },
+    {
+      "id": "bilibili:362166833",
+      "name": "清风夏天鸣蝉",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 22
+    },
+    {
+      "id": "bilibili:386825429",
+      "name": "黄辉冯师傅",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 35
+    },
+    {
+      "id": "bilibili:396015923",
+      "name": "广东广西大件搬家物流",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:405069934",
+      "name": "jonning的小号",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:40853970",
+      "name": "演员熊凤山",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 19
+    },
+    {
+      "id": "bilibili:4121086",
+      "name": "黑_李子",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 34
+    },
+    {
+      "id": "bilibili:419175194",
+      "name": "杉木橦",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 21
+    },
+    {
+      "id": "bilibili:450664995",
+      "name": "珠海的科学R",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 7
+    },
+    {
+      "id": "bilibili:494463119",
+      "name": "我在辟谷",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 37
+    },
+    {
+      "id": "bilibili:494471075",
+      "name": "-该用户账号注销-",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 25
+    },
+    {
+      "id": "bilibili:509046121",
+      "name": "我在银河烤翅膀",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 41
+    },
+    {
+      "id": "bilibili:57167867",
+      "name": "饭巴斯滕",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 4
+    },
+    {
+      "id": "bilibili:666839416",
+      "name": "看视频的工程师",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 31
+    },
+    {
+      "id": "bilibili:6720185",
+      "name": "左旋Cs",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 10
+    },
+    {
+      "id": "bilibili:68389788",
+      "name": "休伯利安号战列巡航舰",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 6
+    },
+    {
+      "id": "bilibili:7644696",
+      "name": "吧啦吧啦kimoji",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 27
+    },
+    {
+      "id": "bilibili:76754981",
+      "name": "与你共鸣也共进退",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "unclear_meme",
+      "component_id": 36
+    },
+    {
+      "id": "bilibili:8378946",
+      "name": "WzZP",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 11
+    },
+    {
+      "id": "bilibili:8396203",
+      "name": "怡红公子不懂爱",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:88525105",
+      "name": "鹿的洗碗人",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 13
+    },
+    {
+      "id": "bilibili:90581079",
+      "name": "我的艾达老婆",
+      "in_degree": 2,
+      "out_degree": 0,
+      "total_degree": 2,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 16
+    },
+    {
+      "id": "bilibili:14455663",
+      "name": "右乘行满秩不变",
+      "in_degree": 0,
+      "out_degree": 2,
+      "total_degree": 2,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 2
+    },
+    {
+      "id": "bilibili:1042288531",
+      "name": "干三干",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 74
+    },
+    {
+      "id": "bilibili:1111924044",
+      "name": "站着不動装糕手",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 43
+    },
+    {
+      "id": "bilibili:11630400",
+      "name": "AyLi丶",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 47
+    },
+    {
+      "id": "bilibili:11646949",
+      "name": "柘月听桑落",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 65
+    },
+    {
+      "id": "bilibili:1216717318",
+      "name": "b站b站真好玩啊",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 60
+    },
+    {
+      "id": "bilibili:14811631",
+      "name": "人生巛一问号",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 69
+    },
+    {
+      "id": "bilibili:15904760",
+      "name": "小能苗绝不投降",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:164099874",
+      "name": "叁石头",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 63
+    },
+    {
+      "id": "bilibili:2151196",
+      "name": "尼奥特里斯里德",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 71
+    },
+    {
+      "id": "bilibili:21790653",
+      "name": "啊南1988",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 64
+    },
+    {
+      "id": "bilibili:21921544",
+      "name": "与娄葑门",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 53
+    },
+    {
+      "id": "bilibili:304111943",
+      "name": "未定之两",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 73
+    },
+    {
+      "id": "bilibili:30447204",
+      "name": "Pika张点点",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:31637138",
+      "name": "hhgrdv",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 51
+    },
+    {
+      "id": "bilibili:3242069",
+      "name": "园外雪离人泪",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 48
+    },
+    {
+      "id": "bilibili:331234234",
+      "name": "熊猫毛很乱",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 67
+    },
+    {
+      "id": "bilibili:340472248",
+      "name": "尤其圆",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 62
+    },
+    {
+      "id": "bilibili:343876",
+      "name": "karanoshoujo",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 45
+    },
+    {
+      "id": "bilibili:3461562180307133",
+      "name": "电动滑板TV",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:3493088095897692",
+      "name": "嗪嗪兽",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 57
+    },
+    {
+      "id": "bilibili:3546587034815126",
+      "name": "Meowtains",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 2
+    },
+    {
+      "id": "bilibili:355872103",
+      "name": "火锅吃很辣",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "support_xibei",
+      "component_id": 46
+    },
+    {
+      "id": "bilibili:380357453",
+      "name": "蓝天和流云舌稳",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 56
+    },
+    {
+      "id": "bilibili:38144534",
+      "name": "梅志豪大大",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_luoyonghao",
+      "component_id": 66
+    },
+    {
+      "id": "bilibili:395906405",
+      "name": "增智慧5a190基本",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 76
+    },
+    {
+      "id": "bilibili:408436013",
+      "name": "Mr-__",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 52
+    },
+    {
+      "id": "bilibili:415386941",
+      "name": "一人天上飞",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 77
+    },
+    {
+      "id": "bilibili:415723930",
+      "name": "嘉然一世",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 70
+    },
+    {
+      "id": "bilibili:43093590",
+      "name": "不要叫我快播凡",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 58
+    },
+    {
+      "id": "bilibili:4400315",
+      "name": "霜之哀伤2014",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 55
+    },
+    {
+      "id": "bilibili:484701316",
+      "name": "两难自解的智慧",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 42
+    },
+    {
+      "id": "bilibili:508740440",
+      "name": "蜗牛瑶妖",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 59
+    },
+    {
+      "id": "bilibili:516831106",
+      "name": "渔人老不死",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 68
+    },
+    {
+      "id": "bilibili:526116712",
+      "name": "宁波一狼",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 75
+    },
+    {
+      "id": "bilibili:535114229",
+      "name": "古今一天",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 54
+    },
+    {
+      "id": "bilibili:552001224",
+      "name": "ewks魔弹射手wisusna",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 61
+    },
+    {
+      "id": "bilibili:650065334",
+      "name": "梧桐山老师傅",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:670897509",
+      "name": "果果凹凸曼",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 44
+    },
+    {
+      "id": "bilibili:6890637",
+      "name": "萱草丶江蓠",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 72
+    },
+    {
+      "id": "bilibili:83948907",
+      "name": "月月好困呐",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 50
+    },
+    {
+      "id": "bilibili:91424944",
+      "name": "kingmighty",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 49
+    },
+    {
+      "id": "bilibili:101341678",
+      "name": "晓夏暮殇",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 19
+    },
+    {
+      "id": "bilibili:10279167",
+      "name": "正版绅士",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 30
+    },
+    {
+      "id": "bilibili:108065228",
+      "name": "Htr音殇",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 72
+    },
+    {
+      "id": "bilibili:108539549",
+      "name": "咿唷咿呀",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 31
+    },
+    {
+      "id": "bilibili:10877703",
+      "name": "丸鸽割",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 41
+    },
+    {
+      "id": "bilibili:11179188",
+      "name": "精神打工人",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 23
+    },
+    {
+      "id": "bilibili:1203415125",
+      "name": "KG少帅",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 47
+    },
+    {
+      "id": "bilibili:13186726",
+      "name": "蓝光Blue-Light",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 29
+    },
+    {
+      "id": "bilibili:13611391",
+      "name": "醉生梦死人生又几何",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 14
+    },
+    {
+      "id": "bilibili:13863187",
+      "name": "冰靈黑咖",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 63
+    },
+    {
+      "id": "bilibili:13867600",
+      "name": "願望猴哥",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 3
+    },
+    {
+      "id": "bilibili:14329097",
+      "name": "赵深沉Zz",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:1436318194",
+      "name": "o幸运のi",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 4
+    },
+    {
+      "id": "bilibili:15534260",
+      "name": "萨马兰奇怪",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:159147571",
+      "name": "对面的杜老头",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 40
+    },
+    {
+      "id": "bilibili:17222569",
+      "name": "长坂坡斩貂蝉",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 29
+    },
+    {
+      "id": "bilibili:1722854",
+      "name": "_催眠君_",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 15
+    },
+    {
+      "id": "bilibili:17385291",
+      "name": "落单的小歪",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 32
+    },
+    {
+      "id": "bilibili:178110973",
+      "name": "猪人公",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 36
+    },
+    {
+      "id": "bilibili:17840527",
+      "name": "啊仙半",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 25
+    },
+    {
+      "id": "bilibili:18607741",
+      "name": "不恭顽石",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:1942165696",
+      "name": "仰望星空群星灿烂",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 31
+    },
+    {
+      "id": "bilibili:200603375",
+      "name": "时光长存-",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 54
+    },
+    {
+      "id": "bilibili:20269350",
+      "name": "帅渣子",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 61
+    },
+    {
+      "id": "bilibili:206119465",
+      "name": "Philde",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 62
+    },
+    {
+      "id": "bilibili:2120688424",
+      "name": "61分会员",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 76
+    },
+    {
+      "id": "bilibili:21252756",
+      "name": "世界树73",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 34
+    },
+    {
+      "id": "bilibili:2138207",
+      "name": "C-Farer",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 17
+    },
+    {
+      "id": "bilibili:2141620854",
+      "name": "饭菜不能太油",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:21462158",
+      "name": "咕呖咕呖新年财",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 6
+    },
+    {
+      "id": "bilibili:22595493",
+      "name": "西瓜就要蘸雪吃",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 65
+    },
+    {
+      "id": "bilibili:227634994",
+      "name": "Pengpeng芃丶",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 67
+    },
+    {
+      "id": "bilibili:228347038",
+      "name": "索马里难民x",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 21
+    },
+    {
+      "id": "bilibili:23322636",
+      "name": "回不到的岁月",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 70
+    },
+    {
+      "id": "bilibili:234574674",
+      "name": "萌抽抽儿",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:234673",
+      "name": "黑Archer",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 57
+    },
+    {
+      "id": "bilibili:235949",
+      "name": "博丽灵梦X",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 27
+    },
+    {
+      "id": "bilibili:239030260",
+      "name": "梦柯啊啊啊",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 38
+    },
+    {
+      "id": "bilibili:239832158",
+      "name": "夜微凉人生忆",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 13
+    },
+    {
+      "id": "bilibili:24243789",
+      "name": "-时未遇兮无所将",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 41
+    },
+    {
+      "id": "bilibili:24685432",
+      "name": "茜特拉莉丶",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 28
+    },
+    {
+      "id": "bilibili:247674757",
+      "name": "叫我洁宝",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 51
+    },
+    {
+      "id": "bilibili:25732371",
+      "name": "红颜_zzZ",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 5
+    },
+    {
+      "id": "bilibili:258391753",
+      "name": "Chan_Song-Yi",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 53
+    },
+    {
+      "id": "bilibili:259488873",
+      "name": "zhwlkt",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 46
+    },
+    {
+      "id": "bilibili:260233008",
+      "name": "404Worle",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:26356887",
+      "name": "呦呦呦三",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "unclear_meme",
+      "component_id": 3
+    },
+    {
+      "id": "bilibili:274900639",
+      "name": "不可思议可",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 9
+    },
+    {
+      "id": "bilibili:28281238",
+      "name": "速溶达芬奇",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 68
+    },
+    {
+      "id": "bilibili:28860133",
+      "name": "红豆南国等你",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 27
+    },
+    {
+      "id": "bilibili:295053044",
+      "name": "wujiang6188",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:29823913",
+      "name": "古谷コバルト",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "unclear_meme",
+      "component_id": 6
+    },
+    {
+      "id": "bilibili:2984705",
+      "name": "夢夢gtz",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 19
+    },
+    {
+      "id": "bilibili:299261802",
+      "name": "飞翰_",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 16
+    },
+    {
+      "id": "bilibili:302530314",
+      "name": "一株大香菇",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 13
+    },
+    {
+      "id": "bilibili:313093112",
+      "name": "排雷用二哈",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 33
+    },
+    {
+      "id": "bilibili:320132663",
+      "name": "主打一手真实",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 36
+    },
+    {
+      "id": "bilibili:32271766",
+      "name": "加百列的香菜",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 60
+    },
+    {
+      "id": "bilibili:32794463",
+      "name": "一脚一个反思怪",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 12
+    },
+    {
+      "id": "bilibili:3285654",
+      "name": "Byuuu",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 24
+    },
+    {
+      "id": "bilibili:34641757",
+      "name": "40656763",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:347496592",
+      "name": "断水流丶丶",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "support_xibei",
+      "component_id": 9
+    },
+    {
+      "id": "bilibili:3493117837707388",
+      "name": "叫我嘿嘿潇洒哥",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 21
+    },
+    {
+      "id": "bilibili:351353693",
+      "name": "帐号巳汪诮",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 17
+    },
+    {
+      "id": "bilibili:35220868",
+      "name": "onewaystreet1988321",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:3546633465760441",
+      "name": "bili_23200358239",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:3546783321950852",
+      "name": "星动复活",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 35
+    },
+    {
+      "id": "bilibili:3546840282696223",
+      "name": "拉神挚爱的曼波",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 43
+    },
+    {
+      "id": "bilibili:3546891614685782",
+      "name": "荒城濑津美",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 18
+    },
+    {
+      "id": "bilibili:3546910799432237",
+      "name": "-蔡玉婷-",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 71
+    },
+    {
+      "id": "bilibili:3546927742323141",
+      "name": "大人時代變了",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 42
+    },
+    {
+      "id": "bilibili:36029162",
+      "name": "好赤鸡啊",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 75
+    },
+    {
+      "id": "bilibili:37337767",
+      "name": "阿拉丁神丁hhhhhh",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 48
+    },
+    {
+      "id": "bilibili:37759770",
+      "name": "过期美少年侦探柯南",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 55
+    },
+    {
+      "id": "bilibili:37959862",
+      "name": "HJ980315",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 22
+    },
+    {
+      "id": "bilibili:37998866",
+      "name": "小狗过来呀",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 45
+    },
+    {
+      "id": "bilibili:38223938",
+      "name": "-赵完松-",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 22
+    },
+    {
+      "id": "bilibili:384311859",
+      "name": "己已巳巴2026",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 58
+    },
+    {
+      "id": "bilibili:384483897",
+      "name": "指间沙逝水",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 73
+    },
+    {
+      "id": "bilibili:38514168",
+      "name": "Kalataer",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:385727019",
+      "name": "为泰着魔",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 39
+    },
+    {
+      "id": "bilibili:387014812",
+      "name": "绿水依然i",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 35
+    },
+    {
+      "id": "bilibili:38871056",
+      "name": "牛爱花酱",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 16
+    },
+    {
+      "id": "bilibili:392790342",
+      "name": "_吃瓜群眾",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 28
+    },
+    {
+      "id": "bilibili:39787950",
+      "name": "妖化的二哈",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 77
+    },
+    {
+      "id": "bilibili:401952075",
+      "name": "U盾耐心",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 50
+    },
+    {
+      "id": "bilibili:404524214",
+      "name": "RoyMakaay7",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 59
+    },
+    {
+      "id": "bilibili:413065599",
+      "name": "剑来__-_-",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 23
+    },
+    {
+      "id": "bilibili:414843421",
+      "name": "六币改这玩意",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 74
+    },
+    {
+      "id": "bilibili:415176537",
+      "name": "freelystar2013",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 8
+    },
+    {
+      "id": "bilibili:4181070",
+      "name": "屋昂玩",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "consumer_right_to_know",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 64
+    },
+    {
+      "id": "bilibili:4192127",
+      "name": "JohnMarston123",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 26
+    },
+    {
+      "id": "bilibili:43755500",
+      "name": "越岳袅",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 44
+    },
+    {
+      "id": "bilibili:438260254",
+      "name": "FreeZingLee",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 32
+    },
+    {
+      "id": "bilibili:442597630",
+      "name": "anjingyy",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 56
+    },
+    {
+      "id": "bilibili:448321946",
+      "name": "bili_70493342365",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_luoyonghao",
+      "component_id": 69
+    },
+    {
+      "id": "bilibili:449716778",
+      "name": "月色慢递员",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 38
+    },
+    {
+      "id": "bilibili:449740254",
+      "name": "假装是少年rst",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 8
+    },
+    {
+      "id": "bilibili:45891858",
+      "name": "氺菓菋",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 10
+    },
+    {
+      "id": "bilibili:4637619",
+      "name": "Savlous",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "brand_pr_crisis",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 25
+    },
+    {
+      "id": "bilibili:4680167",
+      "name": "勒芙安德皮斯",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 11
+    },
+    {
+      "id": "bilibili:472329734",
+      "name": "闫書郁",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 49
+    },
+    {
+      "id": "bilibili:47265481",
+      "name": "思无鸡蛋",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 33
+    },
+    {
+      "id": "bilibili:477799501",
+      "name": "阿伟送葬人",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 7
+    },
+    {
+      "id": "bilibili:478794937",
+      "name": "银河集市",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "food_safety_child_meal",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 5
+    },
+    {
+      "id": "bilibili:480129376",
+      "name": "样子单飞",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 20
+    },
+    {
+      "id": "bilibili:487962541",
+      "name": "smjshsgshsj",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "catering_industry_general",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 18
+    },
+    {
+      "id": "bilibili:488404711",
+      "name": "人生不是电视剧",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 12
+    },
+    {
+      "id": "bilibili:49156810",
+      "name": "命神月",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 11
+    },
+    {
+      "id": "bilibili:500071351",
+      "name": "tensorflow--",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "positive",
+      "dominant_stance": "unclear_meme",
+      "component_id": 37
+    },
+    {
+      "id": "bilibili:504458421",
+      "name": "holthenwu",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 39
+    },
+    {
+      "id": "bilibili:513524126",
+      "name": "二愣子111",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 15
+    },
+    {
+      "id": "bilibili:517930057",
+      "name": "汪汪队司令员",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 37
+    },
+    {
+      "id": "bilibili:5320941",
+      "name": "周一二二二",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 26
+    },
+    {
+      "id": "bilibili:562351816",
+      "name": "Aemeathの猫",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 2
+    },
+    {
+      "id": "bilibili:5872916",
+      "name": "伊濑",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 20
+    },
+    {
+      "id": "bilibili:596034",
+      "name": "世奇君saki",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 30
+    },
+    {
+      "id": "bilibili:61525780",
+      "name": "理太fly",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "price_value",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "neutral_discussion",
+      "component_id": 10
+    },
+    {
+      "id": "bilibili:63606708",
+      "name": "拥有太晶飞的固拉多",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 40
+    },
+    {
+      "id": "bilibili:66658030",
+      "name": "天降流弹",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 34
+    },
+    {
+      "id": "bilibili:678443762",
+      "name": "不要逮捕我了QAQ",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 7
+    },
+    {
+      "id": "bilibili:699425002",
+      "name": "秋名楓",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "luoyonghao_persona",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "unclear_meme",
+      "component_id": 66
+    },
+    {
+      "id": "bilibili:703205445",
+      "name": "纷纷绕绕断风云",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "negative",
+      "dominant_stance": "question_xibei",
+      "component_id": 1
+    },
+    {
+      "id": "bilibili:84095883",
+      "name": "琴心剑语灬",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 52
+    },
+    {
+      "id": "bilibili:85634750",
+      "name": "无物而真",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "other_unclear",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "question_xibei",
+      "component_id": 24
+    },
+    {
+      "id": "bilibili:94212868",
+      "name": "落沙如雪",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "prepared_food_authenticity",
+      "dominant_sentiment": "sarcastic",
+      "dominant_stance": "question_xibei",
+      "component_id": 4
+    },
+    {
+      "id": "bilibili:9882230",
+      "name": "七言Fine",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1,
+      "dominant_topic": "mockery_meme",
+      "dominant_sentiment": "neutral",
+      "dominant_stance": "unclear_meme",
+      "component_id": 14
+    }
+  ],
+  "links": [
+    {
+      "source": "bilibili:101341678",
+      "target": "bilibili:40853970",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:10279167",
+      "target": "bilibili:149045078",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:108065228",
+      "target": "bilibili:6890637",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:108539549",
+      "target": "bilibili:666839416",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:10877703",
+      "target": "bilibili:509046121",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:11179188",
+      "target": "bilibili:261892524",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:1203415125",
+      "target": "bilibili:11630400",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:13186726",
+      "target": "bilibili:17545884",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:13611391",
+      "target": "bilibili:173244991",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:13863187",
+      "target": "bilibili:164099874",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:13867600",
+      "target": "bilibili:209499579",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:14329097",
+      "target": "bilibili:396015923",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:1436318194",
+      "target": "bilibili:57167867",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:14455663",
+      "target": "bilibili:233587785",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:14455663",
+      "target": "bilibili:3546587034815126",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:15534260",
+      "target": "bilibili:405069934",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:159147571",
+      "target": "bilibili:33709459",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:17222569",
+      "target": "bilibili:17545884",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:1722854",
+      "target": "bilibili:16569302",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:17385291",
+      "target": "bilibili:12332519",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:178110973",
+      "target": "bilibili:76754981",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:17840527",
+      "target": "bilibili:494471075",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:18607741",
+      "target": "bilibili:3493289095334193",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:1942165696",
+      "target": "bilibili:666839416",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:200603375",
+      "target": "bilibili:535114229",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:20269350",
+      "target": "bilibili:552001224",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:206119465",
+      "target": "bilibili:340472248",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:2120688424",
+      "target": "bilibili:395906405",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:21252756",
+      "target": "bilibili:4121086",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:2138207",
+      "target": "bilibili:15350722",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:2141620854",
+      "target": "bilibili:279661",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:21462158",
+      "target": "bilibili:68389788",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:22595493",
+      "target": "bilibili:11646949",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:227634994",
+      "target": "bilibili:331234234",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:228347038",
+      "target": "bilibili:419175194",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:23322636",
+      "target": "bilibili:415723930",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:234574674",
+      "target": "bilibili:4192759",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:234673",
+      "target": "bilibili:3493088095897692",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:235949",
+      "target": "bilibili:7644696",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:239030260",
+      "target": "bilibili:1467643346",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:239832158",
+      "target": "bilibili:88525105",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:24243789",
+      "target": "bilibili:509046121",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:24685432",
+      "target": "bilibili:346432948",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:247674757",
+      "target": "bilibili:31637138",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:25732371",
+      "target": "bilibili:19412032",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:258391753",
+      "target": "bilibili:21921544",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:259488873",
+      "target": "bilibili:355872103",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:260233008",
+      "target": "bilibili:37087045",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:26356887",
+      "target": "bilibili:209499579",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:274900639",
+      "target": "bilibili:13247947",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:28281238",
+      "target": "bilibili:516831106",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:28860133",
+      "target": "bilibili:7644696",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:295053044",
+      "target": "bilibili:24556340",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:29823913",
+      "target": "bilibili:68389788",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:2984705",
+      "target": "bilibili:40853970",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:299261802",
+      "target": "bilibili:90581079",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:302530314",
+      "target": "bilibili:88525105",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:313093112",
+      "target": "bilibili:13327156",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:320132663",
+      "target": "bilibili:76754981",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:32271766",
+      "target": "bilibili:1216717318",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:32794463",
+      "target": "bilibili:2800590",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3285654",
+      "target": "bilibili:179911944",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:34641757",
+      "target": "bilibili:37087045",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:347496592",
+      "target": "bilibili:13247947",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3493117837707388",
+      "target": "bilibili:419175194",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:351353693",
+      "target": "bilibili:15350722",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:35220868",
+      "target": "bilibili:4192759",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3546633465760441",
+      "target": "bilibili:321667815",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3546783321950852",
+      "target": "bilibili:386825429",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3546840282696223",
+      "target": "bilibili:1111924044",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:3546891614685782",
+      "target": "bilibili:240823190",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:3546910799432237",
+      "target": "bilibili:2151196",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:3546927742323141",
+      "target": "bilibili:484701316",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:36029162",
+      "target": "bilibili:526116712",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:15904760",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:166576396",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:21895343",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:24556340",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:279661",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:30447204",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:321667815",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:3461562180307133",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:3493289095334193",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:396015923",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:405069934",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:650065334",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37087045",
+      "target": "bilibili:8396203",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37337767",
+      "target": "bilibili:3242069",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37759770",
+      "target": "bilibili:4400315",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:37959862",
+      "target": "bilibili:362166833",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:37998866",
+      "target": "bilibili:343876",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:38223938",
+      "target": "bilibili:362166833",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:384311859",
+      "target": "bilibili:43093590",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:384483897",
+      "target": "bilibili:304111943",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:38514168",
+      "target": "bilibili:8396203",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:385727019",
+      "target": "bilibili:1975211",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:387014812",
+      "target": "bilibili:386825429",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:38871056",
+      "target": "bilibili:90581079",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:392790342",
+      "target": "bilibili:346432948",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:39787950",
+      "target": "bilibili:415386941",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:401952075",
+      "target": "bilibili:83948907",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:404524214",
+      "target": "bilibili:508740440",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:413065599",
+      "target": "bilibili:261892524",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:414843421",
+      "target": "bilibili:1042288531",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:415176537",
+      "target": "bilibili:14046072",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:4181070",
+      "target": "bilibili:21790653",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:4192127",
+      "target": "bilibili:26391649",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:4192759",
+      "target": "bilibili:21895343",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:43755500",
+      "target": "bilibili:670897509",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:438260254",
+      "target": "bilibili:12332519",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:442597630",
+      "target": "bilibili:380357453",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:448321946",
+      "target": "bilibili:14811631",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:449716778",
+      "target": "bilibili:1467643346",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:449740254",
+      "target": "bilibili:14046072",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:45891858",
+      "target": "bilibili:6720185",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:4637619",
+      "target": "bilibili:494471075",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:4680167",
+      "target": "bilibili:8378946",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:472329734",
+      "target": "bilibili:91424944",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:47265481",
+      "target": "bilibili:13327156",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:477799501",
+      "target": "bilibili:450664995",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:478794937",
+      "target": "bilibili:19412032",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:480129376",
+      "target": "bilibili:357773251",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:487962541",
+      "target": "bilibili:240823190",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:488404711",
+      "target": "bilibili:2800590",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:49156810",
+      "target": "bilibili:8378946",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:500071351",
+      "target": "bilibili:494463119",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:504458421",
+      "target": "bilibili:1975211",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:513524126",
+      "target": "bilibili:16569302",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:517930057",
+      "target": "bilibili:494463119",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:5320941",
+      "target": "bilibili:26391649",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:562351816",
+      "target": "bilibili:233587785",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:5872916",
+      "target": "bilibili:357773251",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:596034",
+      "target": "bilibili:149045078",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:61525780",
+      "target": "bilibili:6720185",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:63606708",
+      "target": "bilibili:33709459",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:66658030",
+      "target": "bilibili:4121086",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:678443762",
+      "target": "bilibili:450664995",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:699425002",
+      "target": "bilibili:38144534",
+      "weight": 1,
+      "same_dominant_stance": "false"
+    },
+    {
+      "source": "bilibili:703205445",
+      "target": "bilibili:166576396",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:84095883",
+      "target": "bilibili:408436013",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:85634750",
+      "target": "bilibili:179911944",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:94212868",
+      "target": "bilibili:57167867",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    },
+    {
+      "source": "bilibili:9882230",
+      "target": "bilibili:173244991",
+      "weight": 1,
+      "same_dominant_stance": "true"
+    }
+  ]
+}

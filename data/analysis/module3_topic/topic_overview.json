@@ -1,0 +1,319 @@
+{
+  "module": "module3_topic",
+  "generated_at": "2026-06-04T18:12:47",
+  "input_database": "/Users/heh/projects/course/content security/course_design/data/database/xibei_event.db",
+  "use_llm": true,
+  "reused_llm_raw": true,
+  "model": "deepseek-v4-flash",
+  "endpoint": "",
+  "content_count": 455,
+  "topic_summary": {
+    "prepared_food_authenticity": {
+      "content_count": 113,
+      "content_percent": 24.84,
+      "like_sum": 29315
+    },
+    "price_value": {
+      "content_count": 48,
+      "content_percent": 10.55,
+      "like_sum": 7020
+    },
+    "food_safety_child_meal": {
+      "content_count": 24,
+      "content_percent": 5.27,
+      "like_sum": 7165
+    },
+    "brand_pr_crisis": {
+      "content_count": 25,
+      "content_percent": 5.49,
+      "like_sum": 3220
+    },
+    "luoyonghao_persona": {
+      "content_count": 53,
+      "content_percent": 11.65,
+      "like_sum": 7679
+    },
+    "consumer_right_to_know": {
+      "content_count": 14,
+      "content_percent": 3.08,
+      "like_sum": 3989
+    },
+    "catering_industry_general": {
+      "content_count": 13,
+      "content_percent": 2.86,
+      "like_sum": 543
+    },
+    "mockery_meme": {
+      "content_count": 44,
+      "content_percent": 9.67,
+      "like_sum": 20007
+    },
+    "other_unclear": {
+      "content_count": 121,
+      "content_percent": 26.59,
+      "like_sum": 21586
+    }
+  },
+  "rule_topic_summary": {
+    "prepared_food_authenticity": {
+      "content_count": 102,
+      "content_percent": 22.42,
+      "like_sum": 28192
+    },
+    "price_value": {
+      "content_count": 45,
+      "content_percent": 9.89,
+      "like_sum": 6958
+    },
+    "food_safety_child_meal": {
+      "content_count": 24,
+      "content_percent": 5.27,
+      "like_sum": 7165
+    },
+    "brand_pr_crisis": {
+      "content_count": 22,
+      "content_percent": 4.84,
+      "like_sum": 2921
+    },
+    "luoyonghao_persona": {
+      "content_count": 51,
+      "content_percent": 11.21,
+      "like_sum": 7623
+    },
+    "consumer_right_to_know": {
+      "content_count": 15,
+      "content_percent": 3.3,
+      "like_sum": 3995
+    },
+    "catering_industry_general": {
+      "content_count": 12,
+      "content_percent": 2.64,
+      "like_sum": 446
+    },
+    "mockery_meme": {
+      "content_count": 31,
+      "content_percent": 6.81,
+      "like_sum": 12599
+    },
+    "other_unclear": {
+      "content_count": 153,
+      "content_percent": 33.63,
+      "like_sum": 30625
+    }
+  },
+  "need_review_count": 288,
+  "llm_batches": [
+    {
+      "batch_no": 1,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_001.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 2,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_002.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 3,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_003.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 4,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_004.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 5,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_005.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 6,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_006.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 7,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_007.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 8,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_008.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 9,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_009.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 10,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_010.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 11,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_011.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 12,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_012.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 13,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_013.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 14,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_014.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 15,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_015.json",
+      "error": "",
+      "applied": 19
+    },
+    {
+      "batch_no": 16,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_016.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 17,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_017.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 18,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_018.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 19,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_019.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 20,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_020.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 21,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_021.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 22,
+      "item_count": 20,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_022.json",
+      "error": "",
+      "applied": 20
+    },
+    {
+      "batch_no": 23,
+      "item_count": 15,
+      "ok": true,
+      "status": 200,
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/llm_raw/batch_023.json",
+      "error": "",
+      "applied": 15
+    }
+  ],
+  "notes": [
+    "当前版本暂跳过人工校验。",
+    "最终 topic_label 优先采用 LLM 校正结果；如果 LLM 未返回该条，则保留规则初标。",
+    "content_topics.csv 保留 rule 与 llm 两套字段，便于回溯比较。"
+  ]
+}

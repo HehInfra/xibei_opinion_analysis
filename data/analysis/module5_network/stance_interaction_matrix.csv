@@ -1,0 +1,15 @@
+﻿source_stance,target_stance,reply_count,same_stance
+unclear_meme,question_xibei,39,false
+unclear_meme,unclear_meme,37,true
+question_xibei,question_xibei,35,true
+question_xibei,unclear_meme,12,false
+question_xibei,neutral_discussion,5,false
+neutral_discussion,unclear_meme,4,false
+neutral_discussion,question_xibei,3,false
+unclear_meme,support_xibei,2,false
+question_luoyonghao,unclear_meme,1,false
+question_xibei,support_luoyonghao,1,false
+question_xibei,support_xibei,1,false
+support_xibei,question_xibei,1,false
+unclear_meme,question_luoyonghao,1,false
+unclear_meme,support_luoyonghao,1,false

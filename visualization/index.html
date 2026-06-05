@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>罗永浩西贝事件评论区分析可视化</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #17202a;
+      --muted: #667085;
+      --line: #d9dee7;
+      --blue: #2f6fdd;
+      --teal: #139b8f;
+      --red: #d14b4b;
+      --yellow: #d99722;
+      --green: #3c8b4f;
+      --purple: #7a5cc8;
+      --pink: #c55383;
+      --cyan: #2589a8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      letter-spacing: 0;
+    }
+    header {
+      background: #17202a;
+      color: #fff;
+      padding: 22px 28px 18px;
+      border-bottom: 4px solid #d99722;
+    }
+    h1 { margin: 0; font-size: 26px; line-height: 1.25; font-weight: 760; }
+    .subtitle { margin-top: 8px; color: #cbd5e1; font-size: 14px; line-height: 1.6; max-width: 1100px; }
+    main { padding: 20px; max-width: 1500px; margin: 0 auto; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0 0 8px; font-size: 14px; color: #344054; }
+    .grid { display: grid; gap: 12px; }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 92px;
+      background: #fbfcfe;
+    }
+    .metric .label { color: var(--muted); font-size: 13px; }
+    .metric .value { font-size: 26px; font-weight: 760; margin-top: 8px; }
+    .metric .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+    .chart { width: 100%; min-height: 260px; }
+    .chart.tall { min-height: 440px; }
+    .bar-row { display: grid; grid-template-columns: minmax(120px, 260px) 1fr 70px; gap: 10px; align-items: center; margin: 8px 0; }
+    .bar-label { font-size: 12px; color: #344054; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-track { height: 18px; background: #eef2f6; border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--blue); border-radius: 3px; }
+    .bar-value { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0 2px; font-size: 12px; color: var(--muted); }
+    .swatch { width: 10px; height: 10px; display: inline-block; border-radius: 2px; margin-right: 5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { border-bottom: 1px solid #edf0f5; padding: 8px; text-align: left; vertical-align: top; }
+    th { color: #475467; background: #f8fafc; font-weight: 650; }
+    .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; background: #eef2f6; color: #344054; white-space: nowrap; }
+    .muted { color: var(--muted); }
+    .heatmap { display: grid; gap: 2px; overflow-x: auto; padding-bottom: 4px; }
+    .heat-cell { min-width: 78px; height: 42px; display: flex; align-items: center; justify-content: center; color: #17202a; font-size: 12px; border-radius: 3px; }
+    .axis-cell { min-width: 78px; font-size: 11px; color: #475467; display: flex; align-items: center; justify-content: center; padding: 4px; text-align: center; }
+    svg { width: 100%; height: auto; display: block; }
+    .footnote { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 10px; }
+    @media (max-width: 980px) {
+      main { padding: 12px; }
+      .cols-4, .cols-3, .cols-2 { grid-template-columns: 1fr; }
+      header { padding: 18px; }
+      h1 { font-size: 21px; }
+      .bar-row { grid-template-columns: 130px 1fr 56px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>罗永浩西贝事件 B站评论区六模块分析</h1>
+    <div class="subtitle">从 raw 评论数据出发，经过结构化存储、热度分析、主题识别、情绪立场判断、互动网络构建，最终形成评论区局部圈层化指标。</div>
+  </header>
+  <main>
+    <section>
+      <h2>1. 数据概览</h2>
+      <div class="grid cols-4" id="metricCards"></div>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div>
+          <h3>评论/回复时间分布</h3>
+          <div id="dailyHeat"></div>
+        </div>
+        <div>
+          <h3>分析链路</h3>
+          <div class="footnote">
+            raw txt/JSON → sources/users/contents/relations → SQLite → 六模块分析 → 可视化展示。当前结果适合课程设计原型分析；模块 3/4 暂未进行人工校验，相关样本保留 need_review 字段。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 热度分析</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>视频样本获赞排行</h3>
+          <div id="videoHeat"></div>
+        </div>
+        <div>
+          <h3>高赞评论 Top 10</h3>
+          <div id="hotComments"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. 文本主题分析</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>主题分布</h3>
+          <div id="topicBars"></div>
+        </div>
+        <div>
+          <h3>主题说明</h3>
+          <div class="footnote">
+            主题标签由规则初标和 DeepSeek 校正得到。占比最高的主题集中在预制菜与食材真实性、罗永浩个人形象、价格与性价比，以及调侃玩梗。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 情绪与立场分析</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>情绪分布</h3>
+          <div id="sentimentBars"></div>
+        </div>
+        <div>
+          <h3>立场分布</h3>
+          <div id="stanceBars"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. 主题-立场交叉热力图</h2>
+      <div id="topicStanceHeatmap"></div>
+      <div class="footnote">颜色越深表示该主题和立场组合下的评论数量越多。</div>
+    </section>
+
+    <section>
+      <h2>6. 用户回复网络</h2>
+      <div class="grid cols-3">
+        <div class="metric"><div class="label">reply 网络节点</div><div class="value" id="networkNodeCount"></div><div class="note">参与楼中楼回复的用户</div></div>
+        <div class="metric"><div class="label">reply 边</div><div class="value" id="networkEdgeCount"></div><div class="note">用户对用户回复</div></div>
+        <div class="metric"><div class="label">同立场回复占比</div><div class="value" id="sameStancePercent"></div><div class="note">基于模块 4 标签</div></div>
+      </div>
+      <div id="networkSvg" style="margin-top:14px"></div>
+      <div class="footnote">节点颜色表示用户主立场；线条表示 reply 关系。当前强关系网络较稀疏，因此主要用于展示局部互动结构。</div>
+    </section>
+
+    <section>
+      <h2>7. 评论区圈层化指标</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>CocoonScore 排行</h3>
+          <div id="cocoonBars"></div>
+        </div>
+        <div>
+          <h3>指标解释</h3>
+          <div class="footnote">
+            text_cocoon_score = 主题集中度、情绪一致性、立场一致性的加权结果。full_cocoon_score 在此基础上加入 reply 同立场互动比例；当 reply 边不足时标记为结构样本不足。
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const DATA = {"overview": {"counts": {"raw_files": 17, "parsed_raw_files": 16, "empty_raw_files": 1, "sources": 16, "users": 434, "contents": 455, "relations": 455}, "time_range": {"min_created_at": "2025-09-12T22:07:39+08:00", "max_created_at": "2026-05-31T20:44:59+08:00"}, "heat_summary": {"content_count": 455, "total_likes": 100524, "positive_like_content_count": 421, "positive_like_content_percent": 92.53, "max_like": 10287, "avg_like": 220.93}, "network": {"node_count": 220, "reply_edge_count": 143, "density": 0.002968, "component_count": 77, "same_stance_reply_percent": 50.35}, "cocoon": {"average_text_cocoon_score": 0.5442, "average_full_cocoon_score": 0.5375, "text_level_distribution": {"medium": 5, "low": 11}, "structure_sample_distribution": {"sufficient": 9, "insufficient": 7}}}, "daily_heat": [{"date": "2025-09-12", "content_count": "21", "comment_count": "9", "reply_count": "12", "like_sum": "14805", "max_like": "3297"}, {"date": "2025-09-13", "content_count": "113", "comment_count": "75", "reply_count": "38", "like_sum": "21018", "max_like": "4525"}, {"date": "2025-09-14", "content_count": "89", "comment_count": "50", "reply_count": "39", "like_sum": "49838", "max_like": "10287"}, {"date": "2025-09-15", "content_count": "72", "comment_count": "51", "reply_count": "21", "like_sum": "5643", "max_like": "967"}, {"date": "2025-09-16", "content_count": "63", "comment_count": "54", "reply_count": "9", "like_sum": "4132", "max_like": "743"}, {"date": "2025-09-17", "content_count": "10", "comment_count": "6", "reply_count": "4", "like_sum": "277", "max_like": "173"}, {"date": "2025-09-18", "content_count": "7", "comment_count": "7", "reply_count": "0", "like_sum": "167", "max_like": "140"}, {"date": "2025-09-19", "content_count": "4", "comment_count": "3", "reply_count": "1", "like_sum": "54", "max_like": "37"}, {"date": "2025-09-21", "content_count": "3", "comment_count": "3", "reply_count": "0", "like_sum": "2", "max_like": "1"}, {"date": "2025-09-22", "content_count": "19", "comment_count": "19", "reply_count": "0", "like_sum": "117", "max_like": "20"}, {"date": "2025-09-23", "content_count": "2", "comment_count": "2", "reply_count": "0", "like_sum": "35", "max_like": "34"}, {"date": "2025-09-24", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "1", "max_like": "1"}, {"date": "2025-09-25", "content_count": "2", "comment_count": "2", "reply_count": "0", "like_sum": "8", "max_like": "7"}, {"date": "2025-09-27", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "1", "max_like": "1"}, {"date": "2025-09-29", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "1", "max_like": "1"}, {"date": "2025-10-07", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2025-10-14", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2025-10-31", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2025-11-08", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2025-11-27", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2026-01-16", "content_count": "20", "comment_count": "10", "reply_count": "10", "like_sum": "3249", "max_like": "791"}, {"date": "2026-01-17", "content_count": "15", "comment_count": "7", "reply_count": "8", "like_sum": "988", "max_like": "288"}, {"date": "2026-01-18", "content_count": "2", "comment_count": "1", "reply_count": "1", "like_sum": "30", "max_like": "28"}, {"date": "2026-01-19", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "156", "max_like": "156"}, {"date": "2026-01-25", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2026-02-05", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "0", "max_like": "0"}, {"date": "2026-05-28", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "1", "max_like": "1"}, {"date": "2026-05-31", "content_count": "1", "comment_count": "1", "reply_count": "0", "like_sum": "1", "max_like": "1"}], "top_videos": [{"title": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "full_title": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "likes": 42732, "platform_comments": 9622, "sample_count": 51, "heat_score": 43607.0}, {"title": "罗永浩手撕西贝直播全程【29分钟纯享版】", "full_title": "罗永浩手撕西贝直播全程【29分钟纯享版】", "likes": 23041, "platform_comments": 6559, "sample_count": 53, "heat_score": 23896.0}, {"title": "从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗...", "full_title": "从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当年他怒砸西门子冰箱，为消费者维权，那场面太震撼了！", "likes": 10639, "platform_comments": 633, "sample_count": 30, "heat_score": 10989.0}, {"title": "罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元", "full_title": "罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元", "likes": 8053, "platform_comments": 983, "sample_count": 37, "heat_score": 8573.0}, {"title": "【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自...", "full_title": "【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！", "likes": 4418, "platform_comments": 660, "sample_count": 39, "heat_score": 4993.0}, {"title": "西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。", "full_title": "西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。", "likes": 3301, "platform_comments": 794, "sample_count": 28, "heat_score": 3601.0}, {"title": "罗永浩vs西贝事件 来龙去脉 一口气看完！！！", "full_title": "罗永浩vs西贝事件 来龙去脉 一口气看完！！！", "likes": 2845, "platform_comments": 367, "sample_count": 29, "heat_score": 3170.0}, {"title": "罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩", "full_title": "罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩", "likes": 1963, "platform_comments": 530, "sample_count": 26, "heat_score": 2213.0}, {"title": "罗永浩是怎么把西贝搞翻车的？", "full_title": "罗永浩是怎么把西贝搞翻车的？", "likes": 909, "platform_comments": 169, "sample_count": 21, "heat_score": 1054.0}, {"title": "罗永浩9月12日西贝门事件直播全程", "full_title": "罗永浩9月12日西贝门事件直播全程", "likes": 826, "platform_comments": 385, "sample_count": 22, "heat_score": 976.0}], "top_comments": [{"rank": "1", "user": "Mikoyan21", "likes": 10287, "text": "一桌菜只有客人是现宰的[大哭]", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "prepared_food_authenticity", "sentiment": "sarcastic", "stance": "question_xibei"}, {"rank": "2", "user": "弃庸乎", "likes": 5203, "text": "一岁的儿童吃着两岁的西兰花[笑哭][笑哭]", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "mockery_meme", "sentiment": "neutral", "stance": "unclear_meme"}, {"rank": "3", "user": "嗨皮要天天嗨皮", "likes": 4525, "text": "西门子冰箱，西贝事件都说明，这个世界需要一些勇敢的较真的人", "source": "从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必...", "topic": "luoyonghao_persona", "sentiment": "positive", "stance": "support_luoyonghao"}, {"rank": "4", "user": "清风夏天鸣蝉", "likes": 3880, "text": "哈哈哈哈", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "mockery_meme", "sentiment": "sarcastic", "stance": "unclear_meme"}, {"rank": "5", "user": "cheefay", "likes": 3547, "text": "我算是西贝的常客，本来一开始并不是很关注，但是直播截图看到转基因大豆油我就绷不住了。姑且不讨论转基因是否对健康有害，这个油它便宜啊。西贝随便人均消费100+，结果就用这40/50一桶的转基因大豆油？？？", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "food_safety_child_meal", "sentiment": "sarcastic", "stance": "question_xibei"}, {"rank": "6", "user": "穿趿拉板吃涮锅子", "likes": 3297, "text": "这件事，只要是吃饭馆的，吃外面点餐的，都应该支持老罗。正常人类，理解现做的饭菜，就是我下单后，餐馆把生鲜食材，通过自己厨房餐具完全做熟，端到食客面前。中间不存在半熟，冷冻数月以上的食材，和反复热制的食材。同时我们都应该支持老罗，呼吁推动预制菜国标早日出台，并且食客有对预制菜的完全知情权。", "source": "罗永浩手撕西贝直播全程【29分钟纯享版】", "topic": "consumer_right_to_know", "sentiment": "positive", "stance": "support_luoyonghao"}, {"rank": "7", "user": "飘酱_", "likes": 3209, "text": "主要是西贝太贵了[doge]你看有人骂萨莉亚吗", "source": "罗永浩手撕西贝直播全程【29分钟纯享版】", "topic": "price_value", "sentiment": "sarcastic", "stance": "question_xibei"}, {"rank": "8", "user": "演员熊凤山", "likes": 2678, "text": "兄弟们 我昨天去了哈哈哈哈 43元的炒鸡蛋[笑哭]", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "mockery_meme", "sentiment": "sarcastic", "stance": "unclear_meme"}, {"rank": "9", "user": "吧啦吧啦kimoji", "likes": 2521, "text": "[笑哭]当西贝厨房整了去年的羊腿的时候，什么预制菜定义权都不重要了", "source": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "topic": "prepared_food_authenticity", "sentiment": "neutral", "stance": "question_xibei"}, {"rank": "10", "user": "怡红公子不懂爱", "likes": 2318, "text": "最可怜的是会有人说：谁一大早给你买那么多鱼来做菜啊[doge]，彻底绷不住了", "source": "罗永浩手撕西贝直播全程【29分钟纯享版】", "topic": "mockery_meme", "sentiment": "sarcastic", "stance": "unclear_meme"}], "topic_summary": [{"label": "other_unclear", "count": 121, "percent": 26.59, "likes": 21586}, {"label": "prepared_food_authenticity", "count": 113, "percent": 24.84, "likes": 29315}, {"label": "luoyonghao_persona", "count": 53, "percent": 11.65, "likes": 7679}, {"label": "price_value", "count": 48, "percent": 10.55, "likes": 7020}, {"label": "mockery_meme", "count": 44, "percent": 9.67, "likes": 20007}, {"label": "brand_pr_crisis", "count": 25, "percent": 5.49, "likes": 3220}, {"label": "food_safety_child_meal", "count": 24, "percent": 5.27, "likes": 7165}, {"label": "consumer_right_to_know", "count": 14, "percent": 3.08, "likes": 3989}, {"label": "catering_industry_general", "count": 13, "percent": 2.86, "likes": 543}], "sentiment_summary": [{"label": "neutral", "count": 289, "percent": 63.52, "likes": 45087}, {"label": "sarcastic", "count": 101, "percent": 22.2, "likes": 41125}, {"label": "negative", "count": 57, "percent": 12.53, "likes": 5732}, {"label": "positive", "count": 8, "percent": 1.76, "likes": 8580}], "stance_summary": [{"label": "unclear_meme", "count": 206, "percent": 45.27, "likes": 40093}, {"label": "question_xibei", "count": 202, "percent": 44.4, "likes": 50950}, {"label": "neutral_discussion", "count": 30, "percent": 6.59, "likes": 840}, {"label": "support_luoyonghao", "count": 8, "percent": 1.76, "likes": 8373}, {"label": "support_xibei", "count": 7, "percent": 1.54, "likes": 155}, {"label": "question_luoyonghao", "count": 2, "percent": 0.44, "likes": 113}], "topic_labels": ["brand_pr_crisis", "catering_industry_general", "consumer_right_to_know", "food_safety_child_meal", "luoyonghao_persona", "mockery_meme", "other_unclear", "prepared_food_authenticity", "price_value"], "stance_labels": ["neutral_discussion", "question_luoyonghao", "question_xibei", "support_luoyonghao", "support_xibei", "unclear_meme"], "topic_stance_heatmap": [{"topic": "brand_pr_crisis", "stance": "neutral_discussion", "count": 1}, {"topic": "brand_pr_crisis", "stance": "question_luoyonghao", "count": 0}, {"topic": "brand_pr_crisis", "stance": "question_xibei", "count": 20}, {"topic": "brand_pr_crisis", "stance": "support_luoyonghao", "count": 0}, {"topic": "brand_pr_crisis", "stance": "support_xibei", "count": 2}, {"topic": "brand_pr_crisis", "stance": "unclear_meme", "count": 2}, {"topic": "catering_industry_general", "stance": "neutral_discussion", "count": 6}, {"topic": "catering_industry_general", "stance": "question_luoyonghao", "count": 0}, {"topic": "catering_industry_general", "stance": "question_xibei", "count": 3}, {"topic": "catering_industry_general", "stance": "support_luoyonghao", "count": 0}, {"topic": "catering_industry_general", "stance": "support_xibei", "count": 0}, {"topic": "catering_industry_general", "stance": "unclear_meme", "count": 4}, {"topic": "consumer_right_to_know", "stance": "neutral_discussion", "count": 2}, {"topic": "consumer_right_to_know", "stance": "question_luoyonghao", "count": 0}, {"topic": "consumer_right_to_know", "stance": "question_xibei", "count": 9}, {"topic": "consumer_right_to_know", "stance": "support_luoyonghao", "count": 1}, {"topic": "consumer_right_to_know", "stance": "support_xibei", "count": 0}, {"topic": "consumer_right_to_know", "stance": "unclear_meme", "count": 2}, {"topic": "food_safety_child_meal", "stance": "neutral_discussion", "count": 1}, {"topic": "food_safety_child_meal", "stance": "question_luoyonghao", "count": 0}, {"topic": "food_safety_child_meal", "stance": "question_xibei", "count": 16}, {"topic": "food_safety_child_meal", "stance": "support_luoyonghao", "count": 0}, {"topic": "food_safety_child_meal", "stance": "support_xibei", "count": 1}, {"topic": "food_safety_child_meal", "stance": "unclear_meme", "count": 6}, {"topic": "luoyonghao_persona", "stance": "neutral_discussion", "count": 4}, {"topic": "luoyonghao_persona", "stance": "question_luoyonghao", "count": 1}, {"topic": "luoyonghao_persona", "stance": "question_xibei", "count": 5}, {"topic": "luoyonghao_persona", "stance": "support_luoyonghao", "count": 7}, {"topic": "luoyonghao_persona", "stance": "support_xibei", "count": 0}, {"topic": "luoyonghao_persona", "stance": "unclear_meme", "count": 36}, {"topic": "mockery_meme", "stance": "neutral_discussion", "count": 0}, {"topic": "mockery_meme", "stance": "question_luoyonghao", "count": 0}, {"topic": "mockery_meme", "stance": "question_xibei", "count": 9}, {"topic": "mockery_meme", "stance": "support_luoyonghao", "count": 0}, {"topic": "mockery_meme", "stance": "support_xibei", "count": 0}, {"topic": "mockery_meme", "stance": "unclear_meme", "count": 35}, {"topic": "other_unclear", "stance": "neutral_discussion", "count": 3}, {"topic": "other_unclear", "stance": "question_luoyonghao", "count": 0}, {"topic": "other_unclear", "stance": "question_xibei", "count": 27}, {"topic": "other_unclear", "stance": "support_luoyonghao", "count": 0}, {"topic": "other_unclear", "stance": "support_xibei", "count": 1}, {"topic": "other_unclear", "stance": "unclear_meme", "count": 90}, {"topic": "prepared_food_authenticity", "stance": "neutral_discussion", "count": 10}, {"topic": "prepared_food_authenticity", "stance": "question_luoyonghao", "count": 1}, {"topic": "prepared_food_authenticity", "stance": "question_xibei", "count": 90}, {"topic": "prepared_food_authenticity", "stance": "support_luoyonghao", "count": 0}, {"topic": "prepared_food_authenticity", "stance": "support_xibei", "count": 2}, {"topic": "prepared_food_authenticity", "stance": "unclear_meme", "count": 10}, {"topic": "price_value", "stance": "neutral_discussion", "count": 3}, {"topic": "price_value", "stance": "question_luoyonghao", "count": 0}, {"topic": "price_value", "stance": "question_xibei", "count": 23}, {"topic": "price_value", "stance": "support_luoyonghao", "count": 0}, {"topic": "price_value", "stance": "support_xibei", "count": 1}, {"topic": "price_value", "stance": "unclear_meme", "count": 21}], "network": {"nodes": [{"id": "bilibili:37087045", "name": "皇后的头风", "in_degree": 2, "out_degree": 13, "total_degree": 15, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 1}, {"id": "bilibili:4192759", "name": "飘酱_", "in_degree": 2, "out_degree": 1, "total_degree": 3, "dominant_topic": "price_value", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:12332519", "name": "珠希酱-一分流水", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "food_safety_child_meal", "dominant_sentiment": "neutral", "dominant_stance": "support_xibei", "component_id": 32}, {"id": "bilibili:13247947", "name": "末然ン羽", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 9}, {"id": "bilibili:13327156", "name": "cvfgji", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 33}, {"id": "bilibili:14046072", "name": "Mikoyan21", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 8}, {"id": "bilibili:1467643346", "name": "橘柚橸", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 38}, {"id": "bilibili:149045078", "name": "落车six", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 30}, {"id": "bilibili:15350722", "name": "MISSC0622", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 17}, {"id": "bilibili:16569302", "name": "弃庸乎", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "mockery_meme", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 15}, {"id": "bilibili:166576396", "name": "滑雪雪豹", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "food_safety_child_meal", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:173244991", "name": "大方向是对的长长名字", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 14}, {"id": "bilibili:17545884", "name": "ray21121", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 29}, {"id": "bilibili:179911944", "name": "9mm空尖弹", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 24}, {"id": "bilibili:19412032", "name": "鸣谦s", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "price_value", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 5}, {"id": "bilibili:1975211", "name": "IlIlIlIIllIIlIlI", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "food_safety_child_meal", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 39}, {"id": "bilibili:209499579", "name": "尾张大傻瓜织田信长", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 3}, {"id": "bilibili:21895343", "name": "穿趿拉板吃涮锅子", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "consumer_right_to_know", "dominant_sentiment": "positive", "dominant_stance": "support_luoyonghao", "component_id": 1}, {"id": "bilibili:233587785", "name": "_旧青年", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "price_value", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 2}, {"id": "bilibili:240823190", "name": "晨沁心", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 18}, {"id": "bilibili:24556340", "name": "鱼刺931", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 1}, {"id": "bilibili:261892524", "name": "大明瓦学弟朱祁镇", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 23}, {"id": "bilibili:26391649", "name": "欢喵爱吃鱼", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "food_safety_child_meal", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 26}, {"id": "bilibili:279661", "name": "JIUQIANSHUODAO", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:2800590", "name": "cheefay", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "food_safety_child_meal", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 12}, {"id": "bilibili:321667815", "name": "代号x该隐1", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:33709459", "name": "猪呆呆吃玉米", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 40}, {"id": "bilibili:346432948", "name": "agere23", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "positive", "dominant_stance": "unclear_meme", "component_id": 28}, {"id": "bilibili:3493289095334193", "name": "Sjasth", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "catering_industry_general", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 1}, {"id": "bilibili:357773251", "name": "特立独醒的猫先森", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "mockery_meme", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 20}, {"id": "bilibili:362166833", "name": "清风夏天鸣蝉", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "mockery_meme", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 22}, {"id": "bilibili:386825429", "name": "黄辉冯师傅", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 35}, {"id": "bilibili:396015923", "name": "广东广西大件搬家物流", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "catering_industry_general", "dominant_sentiment": "neutral", "dominant_stance": "neutral_discussion", "component_id": 1}, {"id": "bilibili:405069934", "name": "jonning的小号", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:40853970", "name": "演员熊凤山", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 19}, {"id": "bilibili:4121086", "name": "黑_李子", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 34}, {"id": "bilibili:419175194", "name": "杉木橦", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 21}, {"id": "bilibili:450664995", "name": "珠海的科学R", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "catering_industry_general", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 7}, {"id": "bilibili:494463119", "name": "我在辟谷", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 37}, {"id": "bilibili:494471075", "name": "-该用户账号注销-", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 25}, {"id": "bilibili:509046121", "name": "我在银河烤翅膀", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 41}, {"id": "bilibili:57167867", "name": "饭巴斯滕", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "price_value", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 4}, {"id": "bilibili:666839416", "name": "看视频的工程师", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 31}, {"id": "bilibili:6720185", "name": "左旋Cs", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "price_value", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 10}, {"id": "bilibili:68389788", "name": "休伯利安号战列巡航舰", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 6}, {"id": "bilibili:7644696", "name": "吧啦吧啦kimoji", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 27}, {"id": "bilibili:76754981", "name": "与你共鸣也共进退", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "negative", "dominant_stance": "unclear_meme", "component_id": 36}, {"id": "bilibili:8378946", "name": "WzZP", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 11}, {"id": "bilibili:8396203", "name": "怡红公子不懂爱", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "mockery_meme", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 1}, {"id": "bilibili:88525105", "name": "鹿的洗碗人", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 13}, {"id": "bilibili:90581079", "name": "我的艾达老婆", "in_degree": 2, "out_degree": 0, "total_degree": 2, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 16}, {"id": "bilibili:14455663", "name": "右乘行满秩不变", "in_degree": 0, "out_degree": 2, "total_degree": 2, "dominant_topic": "catering_industry_general", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 2}, {"id": "bilibili:1042288531", "name": "干三干", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 74}, {"id": "bilibili:1111924044", "name": "站着不動装糕手", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 43}, {"id": "bilibili:11630400", "name": "AyLi丶", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 47}, {"id": "bilibili:11646949", "name": "柘月听桑落", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "mockery_meme", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 65}, {"id": "bilibili:1216717318", "name": "b站b站真好玩啊", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "neutral_discussion", "component_id": 60}, {"id": "bilibili:14811631", "name": "人生巛一问号", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 69}, {"id": "bilibili:15904760", "name": "小能苗绝不投降", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:164099874", "name": "叁石头", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "consumer_right_to_know", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 63}, {"id": "bilibili:2151196", "name": "尼奥特里斯里德", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 71}, {"id": "bilibili:21790653", "name": "啊南1988", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 64}, {"id": "bilibili:21921544", "name": "与娄葑门", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 53}, {"id": "bilibili:304111943", "name": "未定之两", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 73}, {"id": "bilibili:30447204", "name": "Pika张点点", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 1}, {"id": "bilibili:31637138", "name": "hhgrdv", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "negative", "dominant_stance": "question_xibei", "component_id": 51}, {"id": "bilibili:3242069", "name": "园外雪离人泪", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 48}, {"id": "bilibili:331234234", "name": "熊猫毛很乱", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "luoyonghao_persona", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 67}, {"id": "bilibili:340472248", "name": "尤其圆", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "price_value", "dominant_sentiment": "negative", "dominant_stance": "neutral_discussion", "component_id": 62}, {"id": "bilibili:343876", "name": "karanoshoujo", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 45}, {"id": "bilibili:3461562180307133", "name": "电动滑板TV", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "mockery_meme", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 1}, {"id": "bilibili:3493088095897692", "name": "嗪嗪兽", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 57}, {"id": "bilibili:3546587034815126", "name": "Meowtains", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "price_value", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 2}, {"id": "bilibili:355872103", "name": "火锅吃很辣", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "price_value", "dominant_sentiment": "neutral", "dominant_stance": "support_xibei", "component_id": 46}, {"id": "bilibili:380357453", "name": "蓝天和流云舌稳", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "mockery_meme", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 56}, {"id": "bilibili:38144534", "name": "梅志豪大大", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_luoyonghao", "component_id": 66}, {"id": "bilibili:395906405", "name": "增智慧5a190基本", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "price_value", "dominant_sentiment": "sarcastic", "dominant_stance": "unclear_meme", "component_id": 76}, {"id": "bilibili:408436013", "name": "Mr-__", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "other_unclear", "dominant_sentiment": "neutral", "dominant_stance": "unclear_meme", "component_id": 52}, {"id": "bilibili:415386941", "name": "一人天上飞", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "brand_pr_crisis", "dominant_sentiment": "sarcastic", "dominant_stance": "question_xibei", "component_id": 77}, {"id": "bilibili:415723930", "name": "嘉然一世", "in_degree": 1, "out_degree": 0, "total_degree": 1, "dominant_topic": "prepared_food_authenticity", "dominant_sentiment": "neutral", "dominant_stance": "question_xibei", "component_id": 70}], "links": [{"source": "bilibili:14455663", "target": "bilibili:233587785", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:14455663", "target": "bilibili:3546587034815126", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:37087045", "target": "bilibili:15904760", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:166576396", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:21895343", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:24556340", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:37087045", "target": "bilibili:279661", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:30447204", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:37087045", "target": "bilibili:321667815", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:3461562180307133", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:3493289095334193", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:37087045", "target": "bilibili:396015923", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:405069934", "weight": 1, "same_dominant_stance": "false"}, {"source": "bilibili:37087045", "target": "bilibili:8396203", "weight": 1, "same_dominant_stance": "true"}, {"source": "bilibili:4192759", "target": "bilibili:21895343", "weight": 1, "same_dominant_stance": "false"}]}, "cocoon_rank": [{"title": "从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当...", "full_title": "从西门子冰箱到西贝预制菜，罗永浩的“较真”从未缺席家人们！今天必须聊聊罗永浩，当年他怒砸西门子冰箱，为消费者维权，那场面太震撼了！", "text_score": 0.7033, "full_score": 0.7616, "level": "medium", "dominant_stance": "unclear_meme", "stance_consistency": 0.7333, "structure": "sufficient"}, {"title": "罗永浩：我真没打，他就先捅了自己20多刀...我该怎么办？", "full_title": "罗永浩：我真没打，他就先捅了自己20多刀...我该怎么办？", "text_score": 0.6333, "full_score": null, "level": "medium", "dominant_stance": "unclear_meme", "stance_consistency": 0.619, "structure": "insufficient"}, {"title": "罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元", "full_title": "罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元", "text_score": 0.6162, "full_score": 0.6095, "level": "medium", "dominant_stance": "unclear_meme", "stance_consistency": 0.6486, "structure": "sufficient"}, {"title": "罗永浩也是懵了，自杀式公关还是第一次见。", "full_title": "罗永浩也是懵了，自杀式公关还是第一次见。", "text_score": 0.6, "full_score": null, "level": "medium", "dominant_stance": "question_xibei", "stance_consistency": 0.6, "structure": "insufficient"}, {"title": "罗永浩：我这辈子没打过这么离谱的仗，对方上来先捅了自己20多刀…", "full_title": "罗永浩：我这辈子没打过这么离谱的仗，对方上来先捅了自己20多刀…", "text_score": 0.6, "full_score": null, "level": "medium", "dominant_stance": "unclear_meme", "stance_consistency": 0.6, "structure": "insufficient"}, {"title": "罗永浩与西贝争论事件原委 一条视频告诉你", "full_title": "罗永浩与西贝争论事件原委 一条视频告诉你", "text_score": 0.5462, "full_score": null, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.6154, "structure": "insufficient"}, {"title": "罗永浩痛批西贝太缺德！一个馒头卖21块，比米其林餐厅还贵！#罗永浩#西贝#预制菜...", "full_title": "罗永浩痛批西贝太缺德！一个馒头卖21块，比米其林餐厅还贵！#罗永浩#西贝#预制菜#太离谱", "text_score": 0.524, "full_score": 0.538, "level": "low", "dominant_stance": "unclear_meme", "stance_consistency": 0.56, "structure": "sufficient"}, {"title": "罗永浩是怎么把西贝搞翻车的？", "full_title": "罗永浩是怎么把西贝搞翻车的？", "text_score": 0.5333, "full_score": null, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.7619, "structure": "insufficient"}, {"title": "【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！", "full_title": "【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！", "text_score": 0.4949, "full_score": 0.5304, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.5641, "structure": "sufficient"}, {"title": "罗永浩vs西贝事件 来龙去脉 一口气看完！！！", "full_title": "罗永浩vs西贝事件 来龙去脉 一口气看完！！！", "text_score": 0.5586, "full_score": 0.5115, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.6207, "structure": "sufficient"}, {"title": "罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩", "full_title": "罗永浩PK西贝，全程55分钟脱口秀，【无删减】火力全开，直播回放太精彩", "text_score": 0.4615, "full_score": 0.5026, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.4615, "structure": "sufficient"}, {"title": "罗永浩与西贝预制菜之争持续发酵，西贝自证变自爆“大翻车”，媒体评：尊重消费者知情...", "full_title": "罗永浩与西贝预制菜之争持续发酵，西贝自证变自爆“大翻车”，媒体评：尊重消费者知情权，自然有人为“真诚”买单", "text_score": 0.5, "full_score": null, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.5, "structure": "insufficient"}, {"title": "罗永浩9月12日西贝门事件直播全程", "full_title": "罗永浩9月12日西贝门事件直播全程", "text_score": 0.4909, "full_score": null, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.4091, "structure": "insufficient"}, {"title": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "full_title": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？", "text_score": 0.5118, "full_score": 0.4862, "level": "low", "dominant_stance": "unclear_meme", "stance_consistency": 0.5294, "structure": "sufficient"}, {"title": "西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。", "full_title": "西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。", "text_score": 0.4714, "full_score": 0.45, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.5357, "structure": "sufficient"}, {"title": "罗永浩手撕西贝直播全程【29分钟纯享版】", "full_title": "罗永浩手撕西贝直播全程【29分钟纯享版】", "text_score": 0.4623, "full_score": 0.4477, "level": "low", "dominant_stance": "question_xibei", "stance_consistency": 0.4906, "structure": "sufficient"}]};
+    const colors = {
+      question_xibei: '#d14b4b',
+      support_xibei: '#3c8b4f',
+      support_luoyonghao: '#2f6fdd',
+      question_luoyonghao: '#7a5cc8',
+      neutral_discussion: '#139b8f',
+      unclear_meme: '#d99722',
+      neutral: '#139b8f',
+      sarcastic: '#d99722',
+      negative: '#d14b4b',
+      positive: '#3c8b4f'
+    };
+
+    function fmt(n) {
+      if (n === null || n === undefined || n === '') return '';
+      const num = Number(n);
+      if (!Number.isFinite(num)) return String(n);
+      return num.toLocaleString('zh-CN');
+    }
+
+    function esc(text) {
+      return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+
+    function barList(el, items, options = {}) {
+      const max = Math.max(...items.map(d => Number(d.value) || 0), 1);
+      const color = options.color || '#2f6fdd';
+      el.innerHTML = items.map(d => {
+        const width = Math.max(2, (Number(d.value) || 0) / max * 100);
+        return `<div class="bar-row" title="${esc(d.title || d.label)}">
+          <div class="bar-label">${esc(d.label)}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${width}%;background:${d.color || color}"></div></div>
+          <div class="bar-value">${fmt(d.value)}</div>
+        </div>`;
+      }).join('');
+    }
+
+    function renderMetrics() {
+      const c = DATA.overview.counts;
+      const h = DATA.overview.heat_summary;
+      const co = DATA.overview.cocoon;
+      const cards = [
+        ['视频源', c.sources, '成功解析的 B站视频源'],
+        ['用户', c.users, '参与评论或回复的用户'],
+        ['评论/回复', c.contents, '结构化内容总量'],
+        ['样本获赞', h.total_likes, '当前样本点赞总量'],
+        ['reply 关系', DATA.overview.network.reply_edge_count, '用户对用户强关系'],
+        ['平均文本圈层分', co.average_text_cocoon_score, '基于主题/情绪/立场'],
+        ['同立场回复', DATA.overview.network.same_stance_reply_percent + '%', 'reply 边中的同立场比例'],
+        ['结构样本充足', co.structure_sample_distribution.sufficient || 0, 'reply 边数达到阈值的视频']
+      ];
+      document.getElementById('metricCards').innerHTML = cards.map(([label, value, note]) =>
+        `<div class="metric"><div class="label">${esc(label)}</div><div class="value">${fmt(value)}</div><div class="note">${esc(note)}</div></div>`
+      ).join('');
+    }
+
+    function renderDailyHeat() {
+      barList(document.getElementById('dailyHeat'), DATA.daily_heat.map(d => ({
+        label: d.date,
+        value: d.content_count,
+        title: `${d.date}: ${d.content_count}`
+      })), {color:'#139b8f'});
+    }
+
+    function renderHeat() {
+      barList(document.getElementById('videoHeat'), DATA.top_videos.map(d => ({
+        label: d.title,
+        value: d.likes,
+        title: d.full_title
+      })), {color:'#2f6fdd'});
+      document.getElementById('hotComments').innerHTML = `<table><thead><tr><th>#</th><th>评论</th><th>赞</th><th>主题</th><th>立场</th></tr></thead><tbody>` +
+        DATA.top_comments.map(d => `<tr>
+          <td>${d.rank}</td><td>${esc(d.text)}</td><td>${fmt(d.likes)}</td><td><span class="tag">${esc(d.topic)}</span></td><td><span class="tag">${esc(d.stance)}</span></td>
+        </tr>`).join('') + `</tbody></table>`;
+    }
+
+    function renderTopics() {
+      barList(document.getElementById('topicBars'), DATA.topic_summary.map(d => ({
+        label: d.label,
+        value: d.count,
+        color: '#7a5cc8'
+      })));
+      barList(document.getElementById('sentimentBars'), DATA.sentiment_summary.map(d => ({
+        label: d.label,
+        value: d.count,
+        color: colors[d.label] || '#2f6fdd'
+      })));
+      barList(document.getElementById('stanceBars'), DATA.stance_summary.map(d => ({
+        label: d.label,
+        value: d.count,
+        color: colors[d.label] || '#2f6fdd'
+      })));
+    }
+
+    function renderHeatmap() {
+      const topics = DATA.topic_labels;
+      const stances = DATA.stance_labels;
+      const map = new Map(DATA.topic_stance_heatmap.map(d => [`${d.topic}|${d.stance}`, d.count]));
+      const max = Math.max(...DATA.topic_stance_heatmap.map(d => d.count), 1);
+      let html = `<div class="heatmap" style="grid-template-columns:160px repeat(${stances.length}, 88px)">`;
+      html += `<div></div>` + stances.map(s => `<div class="axis-cell">${esc(s)}</div>`).join('');
+      for (const topic of topics) {
+        html += `<div class="axis-cell" style="justify-content:flex-start">${esc(topic)}</div>`;
+        for (const stance of stances) {
+          const value = map.get(`${topic}|${stance}`) || 0;
+          const alpha = value / max;
+          const bg = `rgba(47,111,221,${0.08 + alpha * 0.78})`;
+          html += `<div class="heat-cell" style="background:${bg}" title="${esc(topic)} × ${esc(stance)}: ${value}">${value || ''}</div>`;
+        }
+      }
+      html += `</div>`;
+      document.getElementById('topicStanceHeatmap').innerHTML = html;
+    }
+
+    function renderNetwork() {
+      const net = DATA.overview.network;
+      document.getElementById('networkNodeCount').textContent = fmt(net.node_count);
+      document.getElementById('networkEdgeCount').textContent = fmt(net.reply_edge_count);
+      document.getElementById('sameStancePercent').textContent = net.same_stance_reply_percent + '%';
+
+      const width = 1100, height = 520, cx = width / 2, cy = height / 2;
+      const nodes = DATA.network.nodes;
+      const links = DATA.network.links;
+      const positions = new Map();
+      nodes.forEach((n, i) => {
+        const r = 70 + (i % 5) * 38 + (Number(n.total_degree) || 0) * 5;
+        const angle = i / nodes.length * Math.PI * 2;
+        positions.set(n.id, {x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r});
+      });
+      const maxDegree = Math.max(...nodes.map(n => Number(n.total_degree) || 0), 1);
+      const linkSvg = links.map(l => {
+        const s = positions.get(l.source), t = positions.get(l.target);
+        if (!s || !t) return '';
+        const stroke = l.same_dominant_stance === 'true' ? '#139b8f' : '#98a2b3';
+        return `<line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" stroke="${stroke}" stroke-width="${1 + Number(l.weight || 1) * 0.5}" opacity="0.45" />`;
+      }).join('');
+      const nodeSvg = nodes.map(n => {
+        const p = positions.get(n.id);
+        const radius = 4 + (Number(n.total_degree) || 0) / maxDegree * 12;
+        const fill = colors[n.dominant_stance] || '#667085';
+        return `<g><circle cx="${p.x}" cy="${p.y}" r="${radius}" fill="${fill}" opacity="0.9"><title>${esc(n.name || n.id)} | ${esc(n.dominant_stance)} | degree ${n.total_degree}</title></circle></g>`;
+      }).join('');
+      document.getElementById('networkSvg').innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="用户回复网络">${linkSvg}${nodeSvg}</svg>
+        <div class="legend">${Object.entries(colors).filter(([k]) => DATA.stance_labels.includes(k)).map(([k,v]) => `<span><i class="swatch" style="background:${v}"></i>${k}</span>`).join('')}</div>`;
+    }
+
+    function renderCocoon() {
+      barList(document.getElementById('cocoonBars'), DATA.cocoon_rank.slice(0, 12).map(d => ({
+        label: d.title,
+        value: Math.round(d.text_score * 1000) / 1000,
+        title: d.full_title,
+        color: d.level === 'medium' ? '#d99722' : '#139b8f'
+      })), {color:'#d99722'});
+    }
+
+    renderMetrics();
+    renderDailyHeat();
+    renderHeat();
+    renderTopics();
+    renderHeatmap();
+    renderNetwork();
+    renderCocoon();
+  </script>
+</body>
+</html>

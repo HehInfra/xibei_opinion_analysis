@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.env
+.env.*
+*.log
+
+data/analysis/module3_topic/llm_raw/
+data/analysis/module4_sentiment_stance/llm_raw/
+

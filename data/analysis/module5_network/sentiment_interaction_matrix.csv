@@ -1,0 +1,13 @@
+﻿source_sentiment,target_sentiment,reply_count,same_sentiment
+neutral,neutral,54,true
+neutral,sarcastic,30,false
+negative,neutral,11,false
+neutral,negative,11,false
+sarcastic,neutral,11,false
+negative,sarcastic,7,false
+sarcastic,sarcastic,6,true
+negative,negative,5,true
+neutral,positive,3,false
+sarcastic,negative,3,false
+positive,neutral,1,false
+sarcastic,positive,1,false

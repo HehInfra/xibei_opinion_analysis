@@ -1,0 +1,327 @@
+{
+  "module": "module4_sentiment_stance",
+  "generated_at": "2026-06-04T18:26:31",
+  "input_topics": "/Users/heh/projects/course/content security/course_design/data/analysis/module3_topic/content_topics.csv",
+  "use_llm": true,
+  "reused_llm_raw": false,
+  "model": "deepseek-v4-flash",
+  "content_count": 455,
+  "sentiment_summary": {
+    "negative": {
+      "content_count": 57,
+      "content_percent": 12.53,
+      "like_sum": 5732
+    },
+    "neutral": {
+      "content_count": 289,
+      "content_percent": 63.52,
+      "like_sum": 45087
+    },
+    "positive": {
+      "content_count": 8,
+      "content_percent": 1.76,
+      "like_sum": 8580
+    },
+    "sarcastic": {
+      "content_count": 101,
+      "content_percent": 22.2,
+      "like_sum": 41125
+    }
+  },
+  "stance_summary": {
+    "neutral_discussion": {
+      "content_count": 30,
+      "content_percent": 6.59,
+      "like_sum": 840
+    },
+    "question_luoyonghao": {
+      "content_count": 2,
+      "content_percent": 0.44,
+      "like_sum": 113
+    },
+    "question_xibei": {
+      "content_count": 202,
+      "content_percent": 44.4,
+      "like_sum": 50950
+    },
+    "support_luoyonghao": {
+      "content_count": 8,
+      "content_percent": 1.76,
+      "like_sum": 8373
+    },
+    "support_xibei": {
+      "content_count": 7,
+      "content_percent": 1.54,
+      "like_sum": 155
+    },
+    "unclear_meme": {
+      "content_count": 206,
+      "content_percent": 45.27,
+      "like_sum": 40093
+    }
+  },
+  "rule_sentiment_summary": {
+    "negative": {
+      "content_count": 40,
+      "content_percent": 8.79,
+      "like_sum": 4341
+    },
+    "neutral": {
+      "content_count": 334,
+      "content_percent": 73.41,
+      "like_sum": 49474
+    },
+    "positive": {
+      "content_count": 7,
+      "content_percent": 1.54,
+      "like_sum": 8097
+    },
+    "sarcastic": {
+      "content_count": 74,
+      "content_percent": 16.26,
+      "like_sum": 38612
+    }
+  },
+  "rule_stance_summary": {
+    "neutral_discussion": {
+      "content_count": 21,
+      "content_percent": 4.62,
+      "like_sum": 667
+    },
+    "question_xibei": {
+      "content_count": 186,
+      "content_percent": 40.88,
+      "like_sum": 54406
+    },
+    "support_luoyonghao": {
+      "content_count": 2,
+      "content_percent": 0.44,
+      "like_sum": 416
+    },
+    "support_xibei": {
+      "content_count": 1,
+      "content_percent": 0.22,
+      "like_sum": 15
+    },
+    "unclear_meme": {
+      "content_count": 245,
+      "content_percent": 53.85,
+      "like_sum": 45020
+    }
+  },
+  "need_review_count": 272,
+  "llm_batches": [
+    {
+      "batch_no": "1",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_001.json",
+      "error": ""
+    },
+    {
+      "batch_no": "2",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_002.json",
+      "error": ""
+    },
+    {
+      "batch_no": "3",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_003.json",
+      "error": ""
+    },
+    {
+      "batch_no": "4",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_004.json",
+      "error": ""
+    },
+    {
+      "batch_no": "5",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_005.json",
+      "error": ""
+    },
+    {
+      "batch_no": "6",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_006.json",
+      "error": ""
+    },
+    {
+      "batch_no": "7",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_007.json",
+      "error": ""
+    },
+    {
+      "batch_no": "8",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_008.json",
+      "error": ""
+    },
+    {
+      "batch_no": "9",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_009.json",
+      "error": ""
+    },
+    {
+      "batch_no": "10",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_010.json",
+      "error": ""
+    },
+    {
+      "batch_no": "11",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_011.json",
+      "error": ""
+    },
+    {
+      "batch_no": "12",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_012.json",
+      "error": ""
+    },
+    {
+      "batch_no": "13",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_013.json",
+      "error": ""
+    },
+    {
+      "batch_no": "14",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_014.json",
+      "error": ""
+    },
+    {
+      "batch_no": "15",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_015.json",
+      "error": ""
+    },
+    {
+      "batch_no": "16",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_016.json",
+      "error": ""
+    },
+    {
+      "batch_no": "17",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_017.json",
+      "error": ""
+    },
+    {
+      "batch_no": "18",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_018.json",
+      "error": ""
+    },
+    {
+      "batch_no": "19",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_019.json",
+      "error": ""
+    },
+    {
+      "batch_no": "20",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_020.json",
+      "error": ""
+    },
+    {
+      "batch_no": "21",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_021.json",
+      "error": ""
+    },
+    {
+      "batch_no": "22",
+      "item_count": "20",
+      "ok": "True",
+      "status": "200",
+      "applied": "20",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_022.json",
+      "error": ""
+    },
+    {
+      "batch_no": "23",
+      "item_count": "15",
+      "ok": "True",
+      "status": "200",
+      "applied": "15",
+      "raw_path": "/Users/heh/projects/course/content security/course_design/data/analysis/module4_sentiment_stance/llm_raw/batch_023.json",
+      "error": ""
+    }
+  ],
+  "notes": [
+    "当前版本暂跳过人工校验。",
+    "最终标签优先采用 DeepSeek 校正结果；若未返回则保留规则初标。",
+    "情绪和立场分开判断。"
+  ]
+}

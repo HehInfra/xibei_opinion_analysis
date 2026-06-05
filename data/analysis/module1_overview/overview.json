@@ -1,0 +1,143 @@
+{
+  "module": "module1_overview",
+  "generated_at": "2026-06-04T17:44:23",
+  "input_database": "/Users/heh/projects/course/content security/course_design/data/database/xibei_event.db",
+  "counts": {
+    "raw_files": 17,
+    "parsed_raw_files": 16,
+    "empty_raw_files": 1,
+    "sources": 16,
+    "users": 434,
+    "contents": 455,
+    "relations": 455
+  },
+  "content_types": [
+    {
+      "content_type": "comment",
+      "count": 312
+    },
+    {
+      "content_type": "reply",
+      "count": 143
+    }
+  ],
+  "relation_types": [
+    {
+      "relation_type": "comment_source",
+      "count": 312
+    },
+    {
+      "relation_type": "reply",
+      "count": 143
+    }
+  ],
+  "time_range": {
+    "min_created_at": "2025-09-12T22:07:39+08:00",
+    "max_created_at": "2026-05-31T20:44:59+08:00"
+  },
+  "missing_quality": {
+    "sources_missing_title": 0,
+    "sources_missing_published_at": 0,
+    "sources_missing_url": 16,
+    "contents_missing_text": 0,
+    "contents_missing_created_at": 0,
+    "contents_missing_user": 0,
+    "relations_missing_source_user": 0,
+    "reply_relations_missing_target_user": 0,
+    "contents_missing_text_percent": 0.0,
+    "contents_missing_created_at_percent": 0.0,
+    "contents_missing_user_percent": 0.0
+  },
+  "top_video_by_comment_all_count": [
+    {
+      "source_id": "bilibili_video:115198320972353",
+      "source_title": "西贝大战罗永浩，结果导致品牌自爆。大伙儿关心的真实预制菜吗？",
+      "published_at": "2025-09-14T11:30:00",
+      "comment_all_count": 9622,
+      "page_reply_count": 20,
+      "has_next_offset": "true",
+      "extracted_content_count": 51,
+      "extracted_comment_count": 20,
+      "extracted_reply_count": 31,
+      "distinct_user_count": 51,
+      "extracted_like_sum": 42732,
+      "max_like_count": 10287,
+      "first_comment_at": "2025-09-14T11:32:54+08:00",
+      "last_comment_at": "2026-01-17T08:01:09+08:00",
+      "sample_coverage_percent": 0.21
+    },
+    {
+      "source_id": "bilibili_video:115191660484682",
+      "source_title": "罗永浩手撕西贝直播全程【29分钟纯享版】",
+      "published_at": "2025-09-12T22:03:59",
+      "comment_all_count": 6559,
+      "page_reply_count": 20,
+      "has_next_offset": "true",
+      "extracted_content_count": 53,
+      "extracted_comment_count": 20,
+      "extracted_reply_count": 33,
+      "distinct_user_count": 39,
+      "extracted_like_sum": 23041,
+      "max_like_count": 3297,
+      "first_comment_at": "2025-09-12T22:07:39+08:00",
+      "last_comment_at": "2025-09-13T17:18:43+08:00",
+      "sample_coverage_percent": 0.3
+    },
+    {
+      "source_id": "bilibili_video:115196525805764",
+      "source_title": "罗永浩吐槽，西贝戗面馒头每个21元，黑珍珠一钻餐厅包子只要16元",
+      "published_at": "2025-09-13T18:35:16",
+      "comment_all_count": 983,
+      "page_reply_count": 20,
+      "has_next_offset": "true",
+      "extracted_content_count": 37,
+      "extracted_comment_count": 20,
+      "extracted_reply_count": 17,
+      "distinct_user_count": 36,
+      "extracted_like_sum": 8053,
+      "max_like_count": 1801,
+      "first_comment_at": "2025-09-14T00:00:37+08:00",
+      "last_comment_at": "2025-09-16T18:10:19+08:00",
+      "sample_coverage_percent": 2.03
+    },
+    {
+      "source_id": "bilibili_video:115195083034113",
+      "source_title": "西贝创始人贾国龙回应预制菜风波，我们是不一般的预制菜。",
+      "published_at": "2025-09-13T12:25:06",
+      "comment_all_count": 794,
+      "page_reply_count": 20,
+      "has_next_offset": "true",
+      "extracted_content_count": 28,
+      "extracted_comment_count": 20,
+      "extracted_reply_count": 8,
+      "distinct_user_count": 28,
+      "extracted_like_sum": 3301,
+      "max_like_count": 689,
+      "first_comment_at": "2025-09-13T12:39:24+08:00",
+      "last_comment_at": "2026-01-18T05:01:13+08:00",
+      "sample_coverage_percent": 2.52
+    },
+    {
+      "source_id": "bilibili_video:115900413909566",
+      "source_title": "【罗永浩西贝事件】每一步操作都精准地直接踩在爆点上！论餐饮王国贾老板的自我引爆！",
+      "published_at": "2026-01-16T02:03:18",
+      "comment_all_count": 660,
+      "page_reply_count": 20,
+      "has_next_offset": "true",
+      "extracted_content_count": 39,
+      "extracted_comment_count": 20,
+      "extracted_reply_count": 19,
+      "distinct_user_count": 39,
+      "extracted_like_sum": 4418,
+      "max_like_count": 791,
+      "first_comment_at": "2026-01-16T06:41:59+08:00",
+      "last_comment_at": "2026-05-31T20:44:59+08:00",
+      "sample_coverage_percent": 3.03
+    }
+  ],
+  "notes": [
+    "当前数据来自 B 站视频评论 raw 文件。",
+    "source_url 目前为空，说明还需要补充 BV 号或视频链接。",
+    "comment_all_count 是平台返回的完整评论总数，extracted_content_count 是当前已解析样本量。"
+  ]
+}
