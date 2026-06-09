@@ -2,7 +2,7 @@
 
 课程项目中的社交媒体评论数据处理与探索性分析原型。
 
-本项目以“罗永浩西贝事件”相关 B 站视频评论区为例。`data/raw/` 中的原始数据由其他组员提供，我负责将这些 raw 文本数据解析、清洗并组织成可复用的结构化数据和 SQLite 数据库。
+本项目以“罗永浩西贝事件”相关 B 站视频评论区为例。`data/raw/` 中的原始数据由其他组员提供，我负责将这些 raw 数据解析、清洗并组织成可复用的结构化数据和 SQLite 数据库。
 
 基于数据库继续做的主题、情绪、立场、用户互动网络和评论区圈层化分析，是我目前个人提出的一版探索性分析思路，尚未和小组成员充分讨论确认，不代表最终的小组方案。后续可以根据课程汇报重点和组内讨论继续调整。
 
@@ -15,11 +15,11 @@ raw 评论数据
   -> SQLite 数据库
 ```
 
-处理脚本是 `data/process_bilibili_raw.py`。整体思路是先从原始文本中识别不同视频来源、评论内容、回复内容、用户信息和评论互动关系，再把这些信息拆成相对稳定的事实表，最后写入数据库，作为后续分析的统一数据底座。
+处理脚本是 `data/process_bilibili_raw.py`。整体思路是先从原始数据中识别不同视频来源、评论内容、回复内容、用户信息和评论互动关系，再把这些信息拆成相对稳定的事实表，最后写入数据库，作为后续分析的统一数据底座。当前支持两类 raw 数据：一类是 `data/raw/*.txt` 中的旧版文本文件，另一类是 `data/raw/Comments/` 中按 `detail_contents`、`detail_creators`、`detail_comments` 组织的 JSONL 文件。
 
 处理结果主要分为三层：
 
-- `data/interim/`：中间解析结果和审计文件，用于检查 raw 数据是否被正确读取、拆分和清洗。包括 `raw_records.csv`、`raw_file_audit.csv`、`bilibili_video_meta.csv` 以及清洗后的 JSON 文件。
+- `data/interim/`：中间解析结果和审计文件，用于检查 raw 数据是否被正确读取、拆分和清洗。包括 `raw_records.csv`、`raw_file_audit.csv`、`comments_file_audit.csv`、`bilibili_video_meta.csv` 以及清洗后的 JSON 文件。
 - `data/layer1/`：第一层事实数据表，是后续入库和分析的基础。`sources.csv` 保存视频/内容源，`users.csv` 保存用户，`contents.csv` 保存评论和回复文本，`relations.csv` 保存评论回复关系和用户互动关系。
 - `data/database/xibei_event.db`：SQLite 数据库，承接 `layer1` 的结构化结果，方便后续通过 SQL 做关联查询、统计分析和模块化处理。
 
