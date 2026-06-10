@@ -9,6 +9,7 @@ __pycache__/
 .env
 .env.*
 data/config/deepseek.env
+Chinese_macbert_base/
 *.log
 
 data/analysis/module3_topic/llm_raw/
