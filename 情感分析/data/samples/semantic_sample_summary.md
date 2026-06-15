@@ -42,6 +42,6 @@
 
 ## 输出文件
 
-- 全量评论导出：`data/semantic_comments_full.csv`
-- 标注样本：`data/semantic_annotation_sample.csv`
-- 人工审核模板：`data/semantic_annotation_review_template.csv`
+- 全量评论导出：`data/raw/semantic_comments_full.csv`
+- 标注样本：`data/samples/semantic_annotation_sample.csv`
+- 人工审核模板：`data/samples/semantic_annotation_review_template.csv`

@@ -39,7 +39,7 @@ conda run -n xibei-semantic-ft python 情感分析/scripts/finetune/train_macber
 更多服务器训练命令见：
 
 ```text
-情感分析/4090单标签微调说明.md
+情感分析/docs/4090单标签微调说明.md
 ```
 
 输出默认保存到：
@@ -54,5 +54,5 @@ conda run -n xibei-semantic-ft python 情感分析/scripts/finetune/train_macber
 conda run -n xibei-semantic-ft python 情感分析/scripts/finetune/predict_semantic_full.py \
   --device cuda \
   --batch-size 64 \
-  --output 情感分析/outputs/full_semantic_predictions.csv
+  --output 情感分析/outputs/predictions/full_semantic_predictions.csv
 ```

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import random
 import time
 from dataclasses import dataclass
@@ -13,6 +14,8 @@ from typing import Any
 WORKSPACE_DIR = Path(__file__).resolve().parents[3]
 SEMANTIC_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_MODEL_NAME = "hfl/chinese-macbert-base"
+
+os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 TASK_CONFIGS = {
     "topic": {
@@ -153,6 +156,16 @@ def choose_device(device_name: str) -> Any:
     if normalized == "cpu":
         return torch.device("cpu")
     raise ValueError("--device 只支持 auto/cuda/mps/cpu")
+
+
+def device_status() -> dict[str, bool]:
+    import torch
+
+    return {
+        "cuda_available": bool(torch.cuda.is_available()),
+        "mps_built": bool(torch.backends.mps.is_built()),
+        "mps_available": bool(torch.backends.mps.is_available()),
+    }
 
 
 def seed_everything(seed: int) -> None:
@@ -383,6 +396,7 @@ def run(args: argparse.Namespace) -> int:
     print(f"model: {args.model_name}")
     print(f"output: {output_dir}")
     print(f"device: {device}")
+    print(f"device status: {device_status()}")
     print(f"torch: {torch.__version__}")
     print(f"train examples: {len(train_examples)} {label_counts(train_examples, id_to_label)}")
     print(f"valid examples: {len(valid_examples)} {label_counts(valid_examples, id_to_label)}")

@@ -12,12 +12,15 @@
 3. 使用 DeepSeek API 对 1500 条样本做五维语义标注
 4. 生成可用于微调的伪标签训练集
 5. 将本地 MacBERT 基座模型移动到本文件夹中
+6. 完成 topic、emotion、stance_target、stance 四个单标签分类器微调
+7. 对 40803 条全量评论完成四维语义预测
+8. 完成四维语义与源数据交叉分析，报告见 `docs/四维语义交叉分析执行报告.md`
 ```
 
 当前决定：
 
 ```text
-不再进行人工审核，直接使用 DeepSeek 自动标注结果作为伪标签训练集开始微调。
+当前四个单标签分类器已经跑通本地微调和全量预测；第五、六维的 discourse/risk 暂未正式训练。
 ```
 
 因此，后续模型评估要注意：
@@ -54,7 +57,12 @@
 ```text
 情感分析/
   README.md
-  五维语义标签体系与标注规范.md
+
+  docs/
+    五维语义标签体系与标注规范.md
+    4090单标签微调说明.md
+    四个单标签分类器微调与全量预测总结.md
+    四维语义标签交叉分析方案.md
 
   config/
     deepseek.example.env
@@ -66,10 +74,12 @@
     finetuned/                       后续建议保存微调模型的位置
 
   data/
-    semantic_comments_full.csv       40803 条全量评论底表
-    semantic_annotation_sample.csv   1500 条抽样评论
-    semantic_annotation_review_template.csv
-    semantic_sample_summary.md
+    raw/
+      semantic_comments_full.csv     40803 条全量评论底表
+    samples/
+      semantic_annotation_sample.csv 1500 条抽样评论
+      semantic_annotation_review_template.csv
+      semantic_sample_summary.md
     training/
       semantic_train.csv             五维伪标签总训练集
       topic.csv                      主题分类任务数据
@@ -81,18 +91,29 @@
       semantic_train_summary.md      训练集标签分布摘要
 
   outputs/
+    annotations/
+      semantic_annotations_deepseek.jsonl
+      semantic_annotations_deepseek.csv
+      semantic_annotations_for_review.csv
+      semantic_annotations_priority_review.csv
+    analysis/
+      four_dim_semantic/             四维语义交叉分析报告、图表和表格
     deepseek_raw/                    DeepSeek 每批请求和响应原始记录
-    semantic_annotations_deepseek.jsonl
-    semantic_annotations_deepseek.csv
-    semantic_annotations_for_review.csv
-    semantic_annotations_priority_review.csv
+    predictions/
+      full_topic_predictions.csv
+      full_semantic_predictions.csv
 
   scripts/
-    prepare_semantic_sample.py
-    deepseek_semantic_annotate.py
-    make_review_priority.py
-    build_training_set.py
-    后续需要新增训练与预测脚本
+    data_prep/
+      prepare_semantic_sample.py
+      deepseek_semantic_annotate.py
+      make_review_priority.py
+      build_training_set.py
+    finetune/
+      train_macbert_single_label.py
+      predict_semantic_full.py
+    analysis/
+      analyze_four_dim_semantics.py
 ```
 
 ## 3. config 文件夹说明
@@ -137,7 +158,7 @@ DEEPSEEK_MODEL=deepseek-v4-flash
 路径：
 
 ```text
-情感分析/data/semantic_comments_full.csv
+情感分析/data/raw/semantic_comments_full.csv
 ```
 
 含义：
@@ -177,7 +198,7 @@ raw_file_path：来源原始文件路径
 路径：
 
 ```text
-情感分析/data/semantic_annotation_sample.csv
+情感分析/data/samples/semantic_annotation_sample.csv
 ```
 
 含义：
@@ -208,7 +229,7 @@ random：全局随机
 路径：
 
 ```text
-情感分析/data/semantic_annotation_review_template.csv
+情感分析/data/samples/semantic_annotation_review_template.csv
 ```
 
 含义：
@@ -520,7 +541,7 @@ batch_0150.json
 运行：
 
 ```bash
-python3 情感分析/scripts/prepare_semantic_sample.py --sample-size 1500
+python3 情感分析/scripts/data_prep/prepare_semantic_sample.py --sample-size 1500
 ```
 
 当前已经运行过，一般不需要重复。
@@ -539,7 +560,7 @@ python3 情感分析/scripts/prepare_semantic_sample.py --sample-size 1500
 运行：
 
 ```bash
-python3 情感分析/scripts/deepseek_semantic_annotate.py --batch-size 10 --resume
+python3 情感分析/scripts/data_prep/deepseek_semantic_annotate.py --batch-size 10 --resume
 ```
 
 当前已经完成 1500 条标注，一般不需要重复。
@@ -556,7 +577,7 @@ python3 情感分析/scripts/deepseek_semantic_annotate.py --batch-size 10 --res
 运行：
 
 ```bash
-python3 情感分析/scripts/make_review_priority.py
+python3 情感分析/scripts/data_prep/make_review_priority.py
 ```
 
 当前已生成，后续不人工审核时可不用。
@@ -578,7 +599,7 @@ python3 情感分析/scripts/make_review_priority.py
 运行：
 
 ```bash
-python3 情感分析/scripts/build_training_set.py --input 情感分析/outputs/semantic_annotations_for_review.csv
+python3 情感分析/scripts/data_prep/build_training_set.py --input 情感分析/outputs/annotations/semantic_annotations_for_review.csv
 ```
 
 当前已经运行过，生成了 1349 条训练样本。
@@ -707,8 +728,8 @@ risk 任务类别极度不平衡，应该最后做。
 训练好模型后，对全量 40803 条评论预测：
 
 ```text
-输入：data/semantic_comments_full.csv
-输出：outputs/full_semantic_predictions.csv
+输入：data/raw/semantic_comments_full.csv
+输出：outputs/predictions/full_semantic_predictions.csv
 ```
 
 预测结果至少应包含：

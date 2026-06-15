@@ -9,15 +9,24 @@ from pathlib import Path
 from typing import Iterable
 
 
-ROOT = Path(__file__).resolve().parents[2]
-WORK_DIR = ROOT / "情感分析"
+def find_work_dir() -> Path:
+    for path in [Path(__file__).resolve().parent, *Path(__file__).resolve().parents]:
+        if path.name == "情感分析":
+            return path
+    raise RuntimeError("无法定位 情感分析 工作目录")
+
+
+WORK_DIR = find_work_dir()
+ROOT = WORK_DIR.parent
 DATA_DIR = WORK_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+SAMPLES_DIR = DATA_DIR / "samples"
 DB_PATH = ROOT / "data" / "database" / "xibei_event.db"
 
-FULL_COMMENTS_PATH = DATA_DIR / "semantic_comments_full.csv"
-SAMPLE_PATH = DATA_DIR / "semantic_annotation_sample.csv"
-REVIEW_TEMPLATE_PATH = DATA_DIR / "semantic_annotation_review_template.csv"
-SUMMARY_PATH = DATA_DIR / "semantic_sample_summary.md"
+FULL_COMMENTS_PATH = RAW_DIR / "semantic_comments_full.csv"
+SAMPLE_PATH = SAMPLES_DIR / "semantic_annotation_sample.csv"
+REVIEW_TEMPLATE_PATH = SAMPLES_DIR / "semantic_annotation_review_template.csv"
+SUMMARY_PATH = SAMPLES_DIR / "semantic_sample_summary.md"
 
 
 ANNOTATION_FIELDS = [
@@ -217,7 +226,8 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260614, help="Random seed.")
     args = parser.parse_args()
 
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
 
     with connect() as conn:
         rows = fetch_comments(conn)

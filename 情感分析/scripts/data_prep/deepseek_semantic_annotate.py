@@ -12,15 +12,23 @@ from pathlib import Path
 from typing import Any, Optional
 
 
-ROOT = Path(__file__).resolve().parents[2]
-WORK_DIR = ROOT / "情感分析"
+def find_work_dir() -> Path:
+    for path in [Path(__file__).resolve().parent, *Path(__file__).resolve().parents]:
+        if path.name == "情感分析":
+            return path
+    raise RuntimeError("无法定位 情感分析 工作目录")
+
+
+WORK_DIR = find_work_dir()
+ROOT = WORK_DIR.parent
 DATA_DIR = WORK_DIR / "data"
-OUTPUT_DIR = WORK_DIR / "outputs"
-RAW_DIR = OUTPUT_DIR / "deepseek_raw"
+SAMPLES_DIR = DATA_DIR / "samples"
+OUTPUT_DIR = WORK_DIR / "outputs" / "annotations"
+RAW_DIR = WORK_DIR / "outputs" / "deepseek_raw"
 CONFIG_PATH = WORK_DIR / "config" / "deepseek.env"
 LEGACY_CONFIG_PATH = ROOT / "data" / "config" / "deepseek.env"
 
-DEFAULT_INPUT = DATA_DIR / "semantic_annotation_sample.csv"
+DEFAULT_INPUT = SAMPLES_DIR / "semantic_annotation_sample.csv"
 ANNOTATED_JSONL = OUTPUT_DIR / "semantic_annotations_deepseek.jsonl"
 ANNOTATED_CSV = OUTPUT_DIR / "semantic_annotations_deepseek.csv"
 REVIEW_CSV = OUTPUT_DIR / "semantic_annotations_for_review.csv"

@@ -1,6 +1,6 @@
 # 语义训练集摘要
 
-- 来源文件：`情感分析/outputs/semantic_annotations_for_review.csv`
+- 来源文件：`情感分析/outputs/annotations/semantic_annotations_for_review.csv`
 - 可用样本数：1349
 
 ## 数据划分

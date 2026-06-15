@@ -3,14 +3,17 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
 from typing import Any
 
 
 SEMANTIC_DIR = Path(__file__).resolve().parents[2]
 
-DEFAULT_INPUT = SEMANTIC_DIR / "data" / "semantic_comments_full.csv"
-DEFAULT_OUTPUT = SEMANTIC_DIR / "outputs" / "full_semantic_predictions.csv"
+os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
+
+DEFAULT_INPUT = SEMANTIC_DIR / "data" / "raw" / "semantic_comments_full.csv"
+DEFAULT_OUTPUT = SEMANTIC_DIR / "outputs" / "predictions" / "full_semantic_predictions.csv"
 
 DEFAULT_MODEL_DIRS = {
     "topic": SEMANTIC_DIR / "models" / "finetuned" / "topic",
@@ -41,6 +44,16 @@ def choose_device(device_name: str) -> Any:
     if normalized == "cpu":
         return torch.device("cpu")
     raise ValueError("--device 只支持 auto/cuda/mps/cpu")
+
+
+def device_status() -> dict[str, bool]:
+    import torch
+
+    return {
+        "cuda_available": bool(torch.cuda.is_available()),
+        "mps_built": bool(torch.backends.mps.is_built()),
+        "mps_available": bool(torch.backends.mps.is_available()),
+    }
 
 
 def read_rows(path: Path) -> tuple[list[dict[str, str]], list[str]]:
@@ -116,7 +129,7 @@ def predict_task(
     predictions: list[dict[str, Any]] = []
     texts = [(row.get("content_text") or "").strip() for row in rows]
 
-    print(f"predict task={task} model_dir={model_dir} rows={len(rows)}")
+    print(f"predict task={task} model_dir={model_dir} rows={len(rows)}", flush=True)
     for start in range(0, len(texts), batch_size):
         batch_texts = texts[start : start + batch_size]
         encoded = tokenizer(
@@ -128,7 +141,7 @@ def predict_task(
         )
         encoded = {key: value.to(device) for key, value in encoded.items()}
 
-        with torch.no_grad():
+        with torch.inference_mode():
             outputs = model(**encoded)
             probabilities = torch.softmax(outputs.logits, dim=-1)
             scores, label_ids = torch.max(probabilities, dim=-1)
@@ -143,7 +156,7 @@ def predict_task(
 
         finished = min(start + batch_size, len(texts))
         if finished == len(texts) or finished % max(batch_size * 20, 1) == 0:
-            print(f"  {task}: {finished}/{len(texts)}")
+            print(f"  {task}: {finished}/{len(texts)}", flush=True)
 
     return predictions
 
@@ -199,6 +212,7 @@ def main() -> int:
     print(f"input: {input_path}")
     print(f"output: {output_path}")
     print(f"device: {device}")
+    print(f"device status: {device_status()}")
     print(f"rows: {len(rows)}")
     print(f"tasks: {tasks}")
 

@@ -7,9 +7,15 @@ from collections import Counter
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
-WORK_DIR = ROOT / "情感分析"
-DEFAULT_INPUT = WORK_DIR / "outputs" / "semantic_annotations_for_review.csv"
+def find_work_dir() -> Path:
+    for path in [Path(__file__).resolve().parent, *Path(__file__).resolve().parents]:
+        if path.name == "情感分析":
+            return path
+    raise RuntimeError("无法定位 情感分析 工作目录")
+
+
+WORK_DIR = find_work_dir()
+DEFAULT_INPUT = WORK_DIR / "outputs" / "annotations" / "semantic_annotations_for_review.csv"
 OUT_DIR = WORK_DIR / "data" / "training"
 TRAIN_PATH = OUT_DIR / "semantic_train.csv"
 SUMMARY_PATH = OUT_DIR / "semantic_train_summary.md"
