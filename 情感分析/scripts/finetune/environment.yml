@@ -1,0 +1,11 @@
+name: xibei-semantic-ft
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pyyaml
+  - pip
+  - pip:
+      - torch
+      - transformers
+      - socksio

@@ -9,8 +9,14 @@ __pycache__/
 .env
 .env.*
 data/config/deepseek.env
+情感分析/config/deepseek.env
 Chinese_macbert_base/
 *.log
 
 data/analysis/module3_topic/llm_raw/
 data/analysis/module4_sentiment_stance/llm_raw/
+
+# Semantic fine-tuning runtime outputs. Keep data/training and scripts in Git.
+情感分析/outputs/
+情感分析/models/base/
+情感分析/models/finetuned/
