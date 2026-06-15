@@ -47,3 +47,12 @@ conda run -n xibei-semantic-ft python 情感分析/scripts/finetune/train_macber
 ```text
 情感分析/models/finetuned/<task>/
 ```
+
+训练完成后，用 `predict_semantic_full.py` 对全量评论预测：
+
+```bash
+conda run -n xibei-semantic-ft python 情感分析/scripts/finetune/predict_semantic_full.py \
+  --device cuda \
+  --batch-size 64 \
+  --output 情感分析/outputs/full_semantic_predictions.csv
+```
